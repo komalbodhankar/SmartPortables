@@ -54,11 +54,11 @@ public class SaxParserDataStore extends DefaultHandler {
 
     public SaxParserDataStore(String consoleXmlFileName) {
         this.consoleXmlFileName = consoleXmlFileName;
-        wearables = new HashMap<>();
-        phones = new HashMap<>();
-        tablets = new HashMap<>();
-        accessories = new HashMap<>();
-        accessoryHashMap = new HashMap<>();
+        wearables = new HashMap<String, Wearable>();
+        phones = new HashMap<String, Phone>();
+        tablets = new HashMap<String, Tablet>();
+        accessories = new HashMap<String, Accessory>();
+        accessoryHashMap = new HashMap<String, String>();
         parseDocument();
     }
 

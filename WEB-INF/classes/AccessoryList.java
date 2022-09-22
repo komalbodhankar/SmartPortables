@@ -27,7 +27,7 @@ public class AccessoryList extends HttpServlet {
 		HashMap<String, Wearable> hm = new HashMap<String, Wearable>();
 			if(CategoryName.equals("fitness_watches"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Wearable> entry : SaxParserDataStore.wearables.entrySet())
 				{	
 					if(entry.getValue().getRetailer().equals("Fitness Watches"))
 					{

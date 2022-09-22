@@ -30,19 +30,54 @@ public class PhonesList extends HttpServlet {
 			hm.putAll(SaxParserDataStore.phones);
 			name = "";
 		}
-		else
-		{
-		  if(CategoryName.equals("apple")) {
-			  for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet())
-			  {
-				  if (entry.getValue().getRetailer().equals("Apple"))
-				  {
-					  hm.put(entry.getValue().getId(), entry.getValue());
-				  }
-			  }
-			  name = "Apple";
-		  }
+		else {
+			if (CategoryName.equals("apple")) {
+				for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+					if (entry.getValue().getRetailer().equals("Apple")) {
+						hm.put(entry.getValue().getId(), entry.getValue());
+					}
+				}
+				name = "Apple";
+			} else {
+				if (CategoryName.equals("pixel")) {
+					for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+						if (entry.getValue().getRetailer().equals("Google Pixel")) {
+							hm.put(entry.getValue().getId(), entry.getValue());
+						}
+					}
+					name = "Google Pixel";
+			}else
+				{
+				if (CategoryName.equals("samsung")) {
+					for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+						if (entry.getValue().getRetailer().equals("Samsung Galaxy")) {
+							hm.put(entry.getValue().getId(), entry.getValue());
+						}
+					}
+					name = "Samsung Galaxy";
+			}else {
+					if (CategoryName.equals("oneplus")) {
+						for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+							if (entry.getValue().getRetailer().equals("One Plus")) {
+								hm.put(entry.getValue().getId(), entry.getValue());
+							}
+						}
+						name = "One Plus";
+			}else {
+					if (CategoryName.equals("nokia")) {
+						for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+							if (entry.getValue().getRetailer().equals("Nokia")) {
+								hm.put(entry.getValue().getId(), entry.getValue());
+							}
+						}
+						name = "Nokia";
+			}
+					}
+				}
+			}
 		}
+	}
+
 
 		/* Header, Left Navigation Bar are Printed.
 

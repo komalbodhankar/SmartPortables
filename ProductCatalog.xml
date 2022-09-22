@@ -3,77 +3,125 @@
 <ProductCatalog>
 
 <WearableCatalog>
-    <wearable id="Apple Watch SE Gold">
-        <name>Apple Watch SE Gold</name>
-        <price>$279.99 + aslkfaj</price>
+    <wearable id="Fitbit Inspire 3">
+        <name>Fitbit Inspire 3</name>
+        <price>99.95</price>
+        <image>fitbit-inspire3.png</image>
+        <manufacturer>Fitness Watches</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </wearable>
+    <wearable id="Fitbit Charge 5">
+        <name>Fitbit Charge 5</name>
+        <price>149.95</price>
+        <image>fitbit-charge-5.png</image>
+        <manufacturer>Fitness Watches</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </wearable>
+    <wearable id="Fitbit Luxe Tracker">
+        <name>Fitbit Luxe Tracker</name>
+        <price>129.95</price>
+        <image>fitbit-luxe.png</image>
+        <manufacturer>Fitness Watches</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="Apple Ultra Watch">
+        <name>Apple Ultra Watch</name>
+        <price>799</price>
+        <image>apple-ultra-orange.jpeg</image>
+        <manufacturer>Smart Watches</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </wearable>
+    <wearable id="Apple Watch SE">
+        <name>Apple Watch SE</name>
+        <price>279.99</price>
         <image>apple_se_gold.jpeg</image>
-        <manufacturer>Apple</manufacturer>
+        <manufacturer>Smart Watches</manufacturer>
         <condition>New</condition>
-        <discount>10.0</discount>
-        <accessories>
-            <accessory>apple_watch_se_black</accessory>
-            <accessory>xboxone_sh</accessory>
-			<accessory>xboxone_kg</accessory>
-            <accessory>xboxone_vb</accessory>
-			<accessory>xboxone_rs</accessory>
-            <accessory>xboxone_mp</accessory>
-			<accessory>xboxone_mc</accessory>
-
-
-        </accessories>
+        <discount>15.0</discount>
     </wearable>
-    <wearable id="xbox360">
-        <name>xbox360</name>
+    <wearable id="Apple Watch Series 8">
+        <name>Apple Watch Series 8</name>
+        <price>399</price>
+        <image>apple-watch-8.jpeg</image>
+        <manufacturer>Smart Watches</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="JBL Tune 500">
+        <name>JBL Tune 500</name>
+        <price>29.99</price>
+        <image>jbl-tune-500.jpeg</image>
+        <manufacturer>Headphones</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+    </wearable>
+    <wearable id="Apple Airpods Max">
+        <name>Apple Airpods Max</name>
+        <price>429</price>
+        <image>apple-airpods-max.png</image>
+        <manufacturer>Headphones</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="Sony WH-CH510">
+        <name>Sony WH-CH510</name>
+        <price>59.99</price>
+        <image>sony-whch510.png</image>
+        <manufacturer>Headphones</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="Meta Quest 2 - Adv">
+        <name>Meta Quest 2 - Adv</name>
         <price>399.99</price>
-        <image>xbox360.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <image>meta-quest-2-adv.jpeg</image>
+        <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
-        <discount>10.0</discount>
-        <accessories>
-            <accessory>xbox360_wc</accessory>
-            <accessory>xbox360_sh</accessory>
-			<accessory>xbox360_vb</accessory>
-			<accessory>xbox360_rs</accessory>
-			<accessory>xbox360_mp</accessory>
-			<accessory>xbox360_kg</accessory>
-        </accessories>
+        <discount>13.0</discount>
     </wearable>
-
-    <wearable id="PS4">
-        <name>PS4</name>
-        <price>349.99</price>
-        <image>PS4-console-bundle.jpg</image>
-        <manufacturer>Sony</manufacturer>
+    <wearable id="Sony Playstation VR">
+        <name>Sony Playstation VR</name>
+        <price>99.99</price>
+        <image>sony-ps-vr.jpeg</image>
+        <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
-        <accessories>
-            <accessory>ps4_wc</accessory>
-
-        </accessories>
     </wearable>
-    <wearable id="PS3">
-        <name>PS3</name>
-        <price>349.99</price>
-        <image>ps3.jpg</image>
-        <manufacturer>Sony</manufacturer>
+    <wearable id="HP Reverb G2">
+        <name>HP Reverb G2</name>
+        <price>399.99</price>
+        <image>hvreverbg2.png</image>
+        <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
-        <discount>10.0</discount>
-        <accessories>
-            <accessory>ps3_wc</accessory>
-
-        </accessories>
+        <discount>13.0</discount>
     </wearable>
-    <wearable id="WII">
-        <name>WII</name>
-        <price>249.99</price>
-        <image>Wii-Console.png</image>
-        <manufacturer>Nintendo</manufacturer>
+    <wearable id="Fi Series 2 - Dog Collar">
+        <name>Fi Series 2 - Dog Collar</name>
+        <price>149.99</price>
+        <image>yellow_collar_1.png</image>
+        <manufacturer>Pet Tracker</manufacturer>
         <condition>New</condition>
-        <discount>10.0</discount>
-        <accessories>
-            <accessory>nintendo_wc</accessory>
-            <accessory>nintendo_sh</accessory>
-        </accessories>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="Whistle Health">
+        <name>GPS Tracker Collar</name>
+        <price>34.95</price>
+        <image>whistle-health.webp</image>
+        <manufacturer>Pet Tracker</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
+    </wearable>
+    <wearable id="Jio Bit pet tracker">
+        <name>Jio Bit pet tracker</name>
+        <price>129.99</price>
+        <image>jiobit.png</image>
+        <manufacturer>Pet Tracker</manufacturer>
+        <condition>New</condition>
+        <discount>13.0</discount>
     </wearable>
 </WearableCatalog>
 
@@ -122,6 +170,30 @@
 </TabletCatalog>
 
 <PhoneCatalog>
+    <phone id="iPhone 14 Pro">
+        <name>iPhone 14 Pro</name>
+        <price>999</price>
+        <image>iphone-14-pro-deeppurple.jpeg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>12.0</discount>
+    </phone>
+    <phone id="iPhone 14">
+        <name>iPhone 14</name>
+        <price>799</price>
+        <image>iphone-14-model.jpeg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="iPhone 13">
+        <name>iPhone 13</name>
+        <price>599</price>
+        <image>iphone-13-model.jpeg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>11.0</discount>
+    </phone>
     <phone id="iPhone 12">
             <name>iPhone 12</name>
             <price>649</price>
@@ -130,13 +202,117 @@
             <condition>New</condition>
             <discount>15.0</discount>
     </phone>
+    <phone id="iPhone SE">
+        <name>iPhone SE</name>
+        <price>479</price>
+        <image>iphone-se-midnight.jpeg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="Pixel 6">
+        <name>Pixel 6</name>
+        <price>599</price>
+        <image>google-pixel-6.png</image>
+        <manufacturer>Google Pixel</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="Pixel 6a">
+        <name>Pixel 6a</name>
+        <price>699</price>
+        <image>google-pixel-6a.png</image>
+        <manufacturer>Google Pixel</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="Pixel 6 Pro">
+        <name>Pixel 6 Pro</name>
+        <price>899</price>
+        <image>google-pixel-6-pro.png</image>
+        <manufacturer>Google Pixel</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="Galaxy Z Fold4">
+        <name>Galaxy Z Fold4</name>
+        <price>899.99</price>
+        <image>galaxy-fold4.jpeg</image>
+        <manufacturer>Samsung Galaxy</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="Galaxy Z Flip4">
+        <name>Galaxy Z Flip4</name>
+        <price>479.99</price>
+        <image>galaxy-flip4.jpeg</image>
+        <manufacturer>Samsung Galaxy</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="Galaxy S22">
+        <name>Galaxy S22</name>
+        <price>700</price>
+        <image>galaxy-s22.jpeg</image>
+        <manufacturer>Samsung Galaxy</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="One Plus 9 Pro">
+        <name>One Plus 9 Pro</name>
+        <price>799</price>
+        <image>oneplus-9-pro.png</image>
+        <manufacturer>One Plus</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="One Plus 10 Pro">
+        <name>One Plus 10 Pro</name>
+        <price>899</price>
+        <image>oneplus-10-pro.png</image>
+        <manufacturer>One Plus</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </phone>
+    <phone id="One Plus 10T">
+        <name>One Plus 10T</name>
+        <price>649</price>
+        <image>oneplus-10t.png</image>
+        <manufacturer>One Plus</manufacturer>
+        <condition>New</condition>
+        <discount>20.0</discount>
+    </phone>
+    <phone id="Nokia G100">
+        <name>Nokia G100</name>
+        <price>499</price>
+        <image>nokia-g100.png</image>
+        <manufacturer>Nokia</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="Nokia G400">
+        <name>Nokia G400</name>
+        <price>599</price>
+        <image>nokia-g400.png</image>
+        <manufacturer>Nokia</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
+    <phone id="Nokia XR20">
+        <name>Nokia XR20</name>
+        <price>399</price>
+        <image>nokia-xr20.png</image>
+        <manufacturer>Nokia</manufacturer>
+        <condition>New</condition>
+        <discount>5.0</discount>
+    </phone>
 </PhoneCatalog>
 
 <AccessoryCatalog>
 
     <accessory id="apple_watch_se_black">
         <name>Apple Watch SE Space Grey</name>
-        <price>$279.99 + tax</price>
+        <price>279.99</price>
         <image>apple_se_space_grey.jpeg</image>
         <manufacturer>Fitness Watches</manufacturer>
         <condition>New</condition>

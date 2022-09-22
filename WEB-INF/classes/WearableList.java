@@ -32,10 +32,8 @@ public class WearableList extends HttpServlet {
 		{
 		   if(CategoryName.equals("fitness_watches"))
 		   {
-			 for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			 {
-				if(entry.getValue().getRetailer().equals("Fitness Watches"))
-				 {
+			 for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Fitness Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 			 }
@@ -43,10 +41,8 @@ public class WearableList extends HttpServlet {
 		   }
 		   else if(CategoryName.equals("smart_watches"))
 		    {
-			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-				 if(entry.getValue().getRetailer().equals("Smart Watches"))
-				 {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				 if(entry.getValue().getRetailer().equals("Smart Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
@@ -54,10 +50,8 @@ public class WearableList extends HttpServlet {
 			}
 			else if(CategoryName.equals("headphones"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-				 if(entry.getValue().getRetailer().equals("Headphones"))
-				 {
+				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				 if(entry.getValue().getRetailer().equals("Headphones")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
@@ -65,10 +59,8 @@ public class WearableList extends HttpServlet {
 			}
 		   else if(CategoryName.equals("vr"))
 		   {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			   {
-				   if(entry.getValue().getRetailer().equals("Virtual Reality"))
-				   {
+			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				   if(entry.getValue().getRetailer().equals("Virtual Reality")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
 			   }
@@ -76,10 +68,8 @@ public class WearableList extends HttpServlet {
 		   }
 		   else if(CategoryName.equals("pt"))
 		   {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			   {
-				   if(entry.getValue().getRetailer().equals("Pet Tracker"))
-				   {
+			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				   if(entry.getValue().getRetailer().equals("Pet Tracker")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
 			   }
