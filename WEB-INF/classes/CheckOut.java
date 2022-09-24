@@ -18,8 +18,8 @@ public class CheckOut extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
-		PrintWriter pw = response.getWriter();
-	        Utilities Utility = new Utilities(request, pw);
+//		PrintWriter pw = response.getWriter();
+//	        Utilities Utility = new Utilities(request, pw);
 		storeOrders(request, response);
 	}
 	
@@ -42,6 +42,7 @@ public class CheckOut extends HttpServlet {
 		
 	    String userName = session.getAttribute("username").toString();
         String orderTotal = request.getParameter("orderTotal");
+
 		utility.printHtml("Header.html");
 		utility.printHtml("LeftNavigationBar.html");
 		pw.print("<form name ='CheckOut' action='Payment' method='post'>");
@@ -58,13 +59,13 @@ public class CheckOut extends HttpServlet {
 			pw.print(oi.getName()+"</td></tr><tr><td>");
 			pw.print("<input type='hidden' name='orderPrice' value='"+oi.getPrice()+"'>");
 			pw.print("<input type='hidden' name='orderName' value='"+oi.getName()+"'>");
-			pw.print("Product Price:</td><td>"+ oi.getPrice());
+			pw.print("Product Price:</td><td>" + oi.getPrice());
 			pw.print("</td></tr>");
 		}
 		pw.print("<tr><td>");
         pw.print("Total Order Cost</td><td>"+orderTotal);
 		pw.print("<input type='hidden' name='orderTotal' value='"+orderTotal+"'>");
-		pw.print("</td></tr></table><table><tr></tr><tr></tr>");	
+		pw.print("</td></tr></table><table><tr></tr><tr></tr>");
 		pw.print("<tr><td>");
      	pw.print("Credit/accountNo</td>");
 		pw.print("<td><input type='text' name='creditCardNo'>");

@@ -557,8 +557,14 @@ table.gridtable td {
   border-radius: 0 3px 3px 0;
 }
 
+.buttonContainer {
+	display: flex;
+}
 
-
+.description {
+	text-align: center;
+	color: var(--pink);
+}
 .container {
   width:auto !important;
 	height:auto !important;

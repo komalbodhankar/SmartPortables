@@ -19,14 +19,21 @@ public class Laptop extends HttpServlet{
 	private String retailer;
 	private String condition;
 	private double discount;
+
+	private double rebate;
+
+	private String description;
 	
-	public Laptop(String name, double price, String image, String retailer, String condition,double discount){
+	public Laptop(String id,String name, double price, String image,
+				  String retailer,String condition,double discount, double rebate, String description){
 		this.name=name;
 		this.price=price;
 		this.image=image;
 		this.condition=condition;
 		this.discount = discount;
 		this.retailer = retailer;
+		this.description = description;
+		this.rebate = rebate;
 	}
 	
 	public Laptop(){
@@ -80,4 +87,20 @@ public class Laptop extends HttpServlet{
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
+	public double getRebate() {
+		return rebate;
+	}
+
+	public void setRebate(double rebate) {
+		this.rebate = rebate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
+

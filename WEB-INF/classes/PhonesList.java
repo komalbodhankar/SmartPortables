@@ -99,6 +99,9 @@ public class PhonesList extends HttpServlet {
 			pw.print("<h3>"+phone.getName()+"</h3>");
 			pw.print("<strong>"+ "$" + phone.getPrice() + "</strong><ul>");
 			pw.print("<li id='item'><img src='images/phones/"+phone.getImage()+"' alt='' /></li>");
+			pw.print("<li class='description'><span>" + phone.getDescription() + "</span></li>");
+			pw.print("<li class='description'><span> Discount:" + phone.getDiscount() + "</span></li>");
+			pw.print("<li class='description'><span> Rebate:" + phone.getRebate() + "</span></li>");
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='phones'>"+

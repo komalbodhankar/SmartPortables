@@ -23,15 +23,22 @@ public class Wearable extends HttpServlet{
 	private String retailer;
 	private String condition;
 	private double discount;
+
+	private double rebate;
+
+	private String description;
 	HashMap<String,String> accessories;
-	public Wearable(String name, double price, String image, String retailer,String condition,double discount){
+	public Wearable(String name, double price, String image, String retailer,
+					String condition,double discount, double rebate, String description){
 		this.name=name;
 		this.price=price;
 		this.image=image;
 		this.retailer = retailer;
 		this.condition=condition;
 		this.discount = discount;
-        this.accessories=new HashMap<String,String>();
+		this.rebate = rebate;
+		this.description = description;
+        this.accessories=new HashMap<>();
 	}
 	
     HashMap<String,String> getAccessories() {
@@ -90,6 +97,22 @@ public class Wearable extends HttpServlet{
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
+	}
+
+	public double getRebate() {
+		return rebate;
+	}
+
+	public void setRebate(double rebate) {
+		this.rebate = rebate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

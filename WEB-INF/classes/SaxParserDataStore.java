@@ -156,11 +156,20 @@ public class SaxParserDataStore extends DefaultHandler {
             if (element.equals("accessory") && currentElement.equals("wearable")) {
                 accessoryHashMap.put(elementValueRead, elementValueRead);
             }
+//            Testing corousel
+
             if (element.equalsIgnoreCase("accessories") && currentElement.equals("wearable")) {
                 wearable.setAccessories(accessoryHashMap);
-                accessoryHashMap = new HashMap<String, String>();
+                accessoryHashMap = new HashMap<>();
                 return;
             }
+
+            if (element.equalsIgnoreCase("accessories") && currentElement.equals("phone")) {
+                phone.setAccessories(accessoryHashMap);
+                accessoryHashMap = new HashMap<>();
+                return;
+            }
+
             if (element.equalsIgnoreCase("image")) {
                 if (currentElement.equals("wearable"))
                     wearable.setImage(elementValueRead);
@@ -196,6 +205,30 @@ public class SaxParserDataStore extends DefaultHandler {
                     laptop.setCondition(elementValueRead);
                 if (currentElement.equals("accessory"))
                     accessory.setCondition(elementValueRead);
+                return;
+            }
+
+            if (element.equalsIgnoreCase("description")) {
+                if (currentElement.equals("wearable"))
+                    wearable.setDescription(elementValueRead);
+                if (currentElement.equals("phone"))
+                    phone.setDescription(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setDescription(elementValueRead);
+                if (currentElement.equals("accessory"))
+                    accessory.setDescription(elementValueRead);
+                return;
+            }
+
+            if (element.equalsIgnoreCase("rebate")) {
+                if (currentElement.equals("wearable"))
+                    wearable.setRebate(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("phone"))
+                    phone.setRebate(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("laptop"))
+                    laptop.setRebate(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("accessory"))
+                    accessory.setRebate(Double.parseDouble(elementValueRead));
                 return;
             }
 

@@ -10,6 +10,8 @@
         <manufacturer>Fitness Watches</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <rebate>2.0</rebate>
+        <description>Be Fit have Fun.</description>
     </wearable>
     <wearable id="Fitbit Charge 5">
         <name>Fitbit Charge 5</name>
@@ -18,6 +20,8 @@
         <manufacturer>Fitness Watches</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <rebate>2.0</rebate>
+        <description>Be Fit have Fun.</description>
     </wearable>
     <wearable id="Fitbit Luxe Tracker">
         <name>Fitbit Luxe Tracker</name>
@@ -26,6 +30,8 @@
         <manufacturer>Fitness Watches</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Be Fit have Fun.</description>
     </wearable>
     <wearable id="Apple Ultra Watch">
         <name>Apple Ultra Watch</name>
@@ -34,6 +40,11 @@
         <manufacturer>Smart Watches</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <rebate>2.0</rebate>
+        <description>Play Smart.</description>
+        <accessories>
+            <accessory>apple_watch_se_black</accessory>
+        </accessories>
     </wearable>
     <wearable id="Apple Watch SE">
         <name>Apple Watch SE</name>
@@ -42,6 +53,8 @@
         <manufacturer>Smart Watches</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <rebate>2.0</rebate>
+        <description>Watch that makes your life simpler!</description>
     </wearable>
     <wearable id="Apple Watch Series 8">
         <name>Apple Watch Series 8</name>
@@ -50,6 +63,8 @@
         <manufacturer>Smart Watches</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>High-end Tech in one click!</description>
     </wearable>
     <wearable id="JBL Tune 500">
         <name>JBL Tune 500</name>
@@ -58,6 +73,8 @@
         <manufacturer>Headphones</manufacturer>
         <condition>New</condition>
         <discount>0.0</discount>
+        <rebate>2.0</rebate>
+        <description>Tune it up!</description>
     </wearable>
     <wearable id="Apple Airpods Max">
         <name>Apple Airpods Max</name>
@@ -66,6 +83,8 @@
         <manufacturer>Headphones</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Extreme noise cancellation!</description>
     </wearable>
     <wearable id="Sony WH-CH510">
         <name>Sony WH-CH510</name>
@@ -74,6 +93,8 @@
         <manufacturer>Headphones</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Enjoy Dolby-Atmos in Sony!</description>
     </wearable>
     <wearable id="Meta Quest 2 - Adv">
         <name>Meta Quest 2 - Adv</name>
@@ -82,6 +103,8 @@
         <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>High-end Tech in one click!</description>
     </wearable>
     <wearable id="Sony Playstation VR">
         <name>Sony Playstation VR</name>
@@ -90,6 +113,8 @@
         <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <rebate>2.0</rebate>
+        <description>Immerse in Virtual Reality!</description>
     </wearable>
     <wearable id="HP Reverb G2">
         <name>HP Reverb G2</name>
@@ -98,6 +123,8 @@
         <manufacturer>Virtual Reality</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Reverb your Reality!</description>
     </wearable>
     <wearable id="Fi Series 2 - Dog Collar">
         <name>Fi Series 2 - Dog Collar</name>
@@ -106,6 +133,8 @@
         <manufacturer>Pet Tracker</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Watch your Dog</description>
     </wearable>
     <wearable id="Whistle Health">
         <name>GPS Tracker Collar</name>
@@ -114,6 +143,8 @@
         <manufacturer>Pet Tracker</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>Eco-friendly collar!</description>
     </wearable>
     <wearable id="Jio Bit pet tracker">
         <name>Jio Bit pet tracker</name>
@@ -122,6 +153,8 @@
         <manufacturer>Pet Tracker</manufacturer>
         <condition>New</condition>
         <discount>13.0</discount>
+        <rebate>2.0</rebate>
+        <description>GPS for your dog!</description>
     </wearable>
 </WearableCatalog>
 
@@ -380,7 +413,6 @@
 </PhoneCatalog>
 
 <AccessoryCatalog>
-
     <accessory id="apple_watch_se_black">
         <name>Apple Watch SE Space Grey</name>
         <price>279.99</price>
@@ -389,153 +421,6 @@
         <condition>New</condition>
         <discount>10.0</discount>
      </accessory>
-
-    <accessory id="xboxone_sh">
-        <name>Turtle Beach Headset</name>
-        <price>89.99</price>
-        <image>Turtle Beach Headset.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 <accessory id="xboxone_vb">
-        <name>joystick</name>
-        <price>89.99</price>
-        <image>joystick.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xboxone_kg">
-        <name>Keypad</name>
-        <price>89.99</price>
-        <image>keypad.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 <accessory id="xboxone_rs">
-        <name>Starterkit</name>
-        <price>89.99</price>
-        <image>starterkit.jpeg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xboxone_mp">
-        <name>Wireless adpter</name>
-        <price>89.99</price>
-        <image>wirelessadapter.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 <accessory id="xboxone_mc">
-        <name>Wireless </name>
-        <price>89.99</price>
-        <image>wirelessadapter.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-
-    <accessory id="xbox360_wc">
-        <name>XBOX Speeding Wheel</name>
-        <price>89.99</price>
-        <image>XBOX360-SpeedWheel.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xbox360_sh">
-        <name>XBOX Wireless Adapter</name>
-        <price>89.99</price>
-        <image>xbox360_wa.png</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 <accessory id="xbox360_vb">
-        <name>Remote</name>
-        <price>89.99</price>
-        <image>remote.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 	 <accessory id="xbox360_rs">
-        <name>messengerkit</name>
-        <price>89.99</price>
-        <image>messengerkit.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 	 <accessory id="xbox360_mp">
-        <name>Steering</name>
-        <price>89.99</price>
-        <image>steering.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-	 	 <accessory id="xbox360_kg">
-        <name>Charger</name>
-        <price>89.99</price>
-        <image>charger.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="ps4_wc">
-        <name>PS Controller</name>
-        <price>89.99</price>
-        <image>XBOX controller.jpg</image>
-        <manufacturer>Sony</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="ps3_wc">
-        <name>PS Gaming HeadPhones</name>
-        <price>89.99</price>
-        <image>Turtle Beach Headset.jpg</image>
-        <manufacturer>Sony</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="nintendo_wc">
-        <name>Nintendo Controller</name>
-        <price>89.99</price>
-        <image>Wii1.jpg</image>
-        <manufacturer>Nintendo</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="nintendo_sh">
-        <name>Nintendo Racing Controller</name>
-        <price>89.99</price>
-        <image>Wii2.jpg</image>
-        <manufacturer>Nintendo</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-
-
 </AccessoryCatalog>
 
 

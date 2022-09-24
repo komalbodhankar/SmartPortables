@@ -106,6 +106,9 @@ public class AccessoryList extends HttpServlet {
 				pw.print("<h3>"+accessory.getName()+"</h3>");
 				pw.print("<strong>"+accessory.getPrice()+"$</strong><ul>");
 				pw.print("<li id='item'><img src='images/accessories/"+accessory.getImage()+"' alt='' /></li>");
+				pw.print("<li class='description'><span>" + accessory.getDescription() + "</span></li>");
+				pw.print("<li class='description'><span> Discount:" + accessory.getDiscount() + "</span></li>");
+				pw.print("<li class='description'><span> Rebate:" + accessory.getRebate() + "</span></li>");
 				pw.print("<li><form method='post' action='Cart'>" +
 						"<input type='hidden' name='name' value='"+acc.getValue()+"'>"+
 						"<input type='hidden' name='type' value='accessories'>"+

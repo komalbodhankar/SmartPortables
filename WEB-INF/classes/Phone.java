@@ -3,6 +3,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 
 @WebServlet("/Phone")
 
@@ -23,8 +24,13 @@ public class Phone extends HttpServlet{
 	private String retailer;
 	private String condition;
 	private double discount;
+	HashMap<String,String> accessories;
+	private double rebate;
+
+	private String description;
 	
-	public Phone(String id,String name, double price, String image, String retailer,String condition,double discount){
+	public Phone(String id,String name, double price, String image,
+				 String retailer,String condition,double discount, double rebate, String description){
 		this.id=id;
 		this.name=name;
 		this.price=price;
@@ -32,6 +38,9 @@ public class Phone extends HttpServlet{
 		this.condition=condition;
 		this.discount = discount;
 		this.retailer = retailer;
+		this.description = description;
+		this.rebate = rebate;
+		this.accessories=new HashMap<>();
 	}
 	
 	public Phone(){
@@ -84,6 +93,26 @@ public class Phone extends HttpServlet{
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
+	}
+
+	public double getRebate() {
+		return rebate;
+	}
+
+	public void setRebate(double rebate) {
+		this.rebate = rebate;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setAccessories( HashMap<String,String> accessories) {
+		this.accessories = accessories;
 	}
 	
 }

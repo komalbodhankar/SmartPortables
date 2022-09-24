@@ -19,62 +19,52 @@ import java.io.*;
 			
 			
 public class Carousel{
-			
+
 	public String  carouselfeature(Utilities utility){
-				
-						
-		HashMap<String, Wearable> hm = new HashMap<String, Wearable>();
+		HashMap<String, Wearable> hm = new HashMap<>();
+
 		StringBuilder sb = new StringBuilder();
 		String myCarousel = null;
-			
+
 		String name = null;
 		String CategoryName = null;
-		if(CategoryName==null){
+		if(CategoryName == null){
 			hm.putAll(SaxParserDataStore.wearables);
 			name = "";
 		}
 		int l =0;
-		for (OrderItem oi : utility.getCustomerOrders())
-		{
-			if (hm.containsKey(oi.getName()))
-			{	
+		for (OrderItem oi : utility.getCustomerOrders()) {
+			if (hm.containsKey(oi.getName())) {
 		        myCarousel = "myCarousel"+l;
-					
+
 				sb.append("<div id='content'><div class='post'><h2 class='title meta'>");
 				sb.append("<a style='font-size: 24px;'>"+oi.getName()+" Accessories</a>");
-				
+
 				sb.append("</h2>");
 
 				sb.append("<div class='container'>");
 				/* Carousels require the use of an id (in this case id="myCarousel") for carousel controls to function properly.
 				The .slide class adds a CSS transition and animation effect, which makes the items slide when showing a new item.
-				Omit this class if you do not want this effect. 
-				The data-ride="carousel" attribute tells Bootstrap to begin animating the carousel immediately when the page loads. 
-		 
+				Omit this class if you do not want this effect.
+				The data-ride="carousel" attribute tells Bootstrap to begin animating the carousel immediately when the page loads.
+
 				*/
 				sb.append("<div class='carousel slide' id='"+myCarousel+"' data-ride='carousel'>");
-				
+
 				/*The slides are specified in a <div> with class .carousel-inner.
 				The content of each slide is defined in a <div> with class .item. This can be text or images.
 				The .active class needs to be added to one of the slides. Otherwise, the carousel will not be visible.
 				*/
 				sb.append("<div class='carousel-inner'>");
-						
+
 				Wearable console1 = hm.get(oi.getName());
 				System.out.print(oi.getName());
 				int k = 0; int size= hm.size();
-			
-				for(Map.Entry<String, String> acc:console1.getAccessories().entrySet())
-				{
-				
+				for(Map.Entry<String, String> acc:console1.getAccessories().entrySet()) {
 					Accessory accessory= SaxParserDataStore.accessories.get(acc.getValue());
-					if (k==0 )
-					{
-						
+					if (k==0 ) {
 						sb.append("<div class='item active'><div class='col-md-6' style = 'background-color: #58acfa;border :1px solid #cfd1d3'>");
-					}
-					else
-					{
+					} else {
 						sb.append("<div class='item'><div class='col-md-6' style = 'background-color: #58acfa ;border :1px solid #cfd1d3' >");
 					}
 					sb.append("<div id='shop_item'>");
@@ -100,11 +90,11 @@ public class Carousel{
 
 					sb.append("</ul></div></div>");
 					sb.append("</div>");
-				
+
 					k++;
-			
+
 				}
-			
+
 				sb.append("</div>");
 				/*		The "Left and right controls" part:
 					This code adds "left" and "right" buttons that allows the user to go back and forth between the slides manually.
@@ -120,13 +110,13 @@ public class Carousel{
 							"<span class='sr-only'>Next</span>"+
 							"</a>");
 
-			
+
 				sb.append("</div>");
-			
+
 				sb.append("</div></div>");
 				sb.append("</div>");
 				l++;
-			
+
 				}
 			}
 			return sb.toString();

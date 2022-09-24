@@ -99,6 +99,9 @@ public class WearableList extends HttpServlet {
 			pw.print("<h3>"+wearable.getName()+"</h3>");
 			pw.print("<strong>$"+wearable.getPrice()+"</strong><ul>");
 			pw.print("<li id='item'><img src='images/wearables/"+wearable.getImage()+"' alt='' /></li>");
+			pw.print("<li class='description'><span>" + wearable.getDescription() + "</span></li>");
+			pw.print("<li class='description'><span> Discount:" + wearable.getDiscount() + "</span></li>");
+			pw.print("<li class='description'><span> Rebate:" + wearable.getRebate() + "</span></li>");
 			
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
