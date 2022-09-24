@@ -1,12 +1,7 @@
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Tablet")
+@WebServlet("/Laptop")
 
 /* 
 	Tablet class contains class variables name,price,image,retailer,condition,discount.
@@ -16,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 	Tablet class contains getters and setters for name,price,image,retailer,condition,discount.
 */
 
-public class Tablet extends HttpServlet{
+public class Laptop extends HttpServlet{
 	private String id;
 	private String name;
 	private double price;
@@ -25,7 +20,7 @@ public class Tablet extends HttpServlet{
 	private String condition;
 	private double discount;
 	
-	public Tablet(String name, double price, String image, String retailer, String condition,double discount){
+	public Laptop(String name, double price, String image, String retailer, String condition,double discount){
 		this.name=name;
 		this.price=price;
 		this.image=image;
@@ -34,7 +29,7 @@ public class Tablet extends HttpServlet{
 		this.retailer = retailer;
 	}
 	
-	public Tablet(){
+	public Laptop(){
 		
 	}
 	

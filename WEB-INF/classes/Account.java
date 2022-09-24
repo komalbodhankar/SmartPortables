@@ -28,11 +28,9 @@ public class Account extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		Utilities utility = new Utilities(request, pw);
-		try
-         {  
+		try {
            response.setContentType("text/html");
-			if(!utility.isLoggedin())
-			{
+			if(!utility.isLoggedin()) {
 				HttpSession session = request.getSession(true);				
 				session.setAttribute("login_msg", "Please Login to add items to cart");
 				response.sendRedirect("Login");
@@ -64,7 +62,7 @@ public class Account extends HttpServlet {
 				}
 			catch(Exception e)
 				{
-			
+					e.printStackTrace();
 				}
 			int size=0;
 			for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet())
@@ -74,9 +72,7 @@ public class Account extends HttpServlet {
 					size= size+1;
 				}
 				
-			if(size>0)
-				{	
-					
+			if(size>0) {
 					pw.print("<tr><td></td>");
 					pw.print("<td>OrderId:</td>");
 					pw.print("<td>UserName:</td>");
@@ -98,24 +94,17 @@ public class Account extends HttpServlet {
 						}
 					
 					}
-					
 					pw.print("</table>");
-				}
-				else
-				{
+				} else {
 					pw.print("<h4 style='color:red'>You have not placed any order with this order id</h4>");
 				}
-			
-				
-				
-				
-				
 			pw.print("</table>");		
 			pw.print("</h2></div></div></div>");		
 			utility.printHtml("Footer.html");	        	
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 		}		
 	}
 }

@@ -56,7 +56,7 @@ public class Registration extends HttpServlet {
 			}
 			catch(Exception e)
 			{
-				
+				e.printStackTrace();
 			}
 
 			// if the user already exist show error that already exist
@@ -77,8 +77,9 @@ public class Registration extends HttpServlet {
 				objectOutputStream.close();       
 				fileOutputStream.close();
 				HttpSession session = request.getSession(true);				
-				session.setAttribute("login_msg", "Your "+usertype+" account has been created. Please login");
+
 				if(!utility.isLoggedin()){
+					session.setAttribute("login_msg", "Your "+usertype+" account has been created. Please login");
 					response.sendRedirect("Login"); return;
 				} else {
 					response.sendRedirect("Account"); return;
@@ -109,6 +110,7 @@ public class Registration extends HttpServlet {
 				+ "<div style='width:400px; margin:25px; margin-left: auto;margin-right: auto;'>");
 		if (error)
 			pw.print("<h4 style='color:red'>"+error_msg+"</h4>");
+
 		pw.print("<form method='post' action='Registration'>"
 				+ "<table style='width:100%'><tr><td>"
 				+ "<h3>Username</h3></td><td><input type='text' name='username' value='' class='input' required></input>"

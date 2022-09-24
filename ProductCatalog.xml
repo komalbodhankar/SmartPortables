@@ -125,49 +125,120 @@
     </wearable>
 </WearableCatalog>
 
-<TabletCatalog>
-    <tablet id="ipad">
-        <name>Apple Ipad Pro</name>
-        <price>189.99</price>
-        <image>apple1.jpg</image>
-        <manufacturer>Apple</manufacturer>
+<LaptopCatalog>
+    <laptop id="HP Pavilon">
+        <name>HP Pavilon</name>
+        <price>499.90</price>
+        <image>hp-pavilon.png</image>
+        <manufacturer>HP</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
-    </tablet>
-    <tablet id="ipad3">
-        <name>Apple Ipad 3</name>
-        <price>189.99</price>
-        <image>apple2.jpg</image>
-        <manufacturer>Apple</manufacturer>
-        <condition>Used</condition>
+    </laptop>
+    <laptop id="HP Spectre">
+        <name>HP Spectre</name>
+        <price>1149.99</price>
+        <image>hp-spectre.png</image>
+        <manufacturer>HP</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </laptop>
+    <laptop id="HP Envy">
+        <name>HP Envy</name>
+        <price>829.99</price>
+        <image>hp-envy.png</image>
+        <manufacturer>HP</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+    </laptop>
+    <laptop id="Inspiron 16">
+        <name>Inspiron 16</name>
+        <price>799.99</price>
+        <image>inspiron-16.jpeg</image>
+        <manufacturer>DELL</manufacturer>
+        <condition>New</condition>
         <discount>20.0</discount>
-    </tablet>
-    <tablet id="Surface">
-        <name>Surface</name>
-        <price>299.99</price>
-        <image>m1.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+    </laptop>
+    <laptop id="XPS 13">
+        <name>XPS 13</name>
+        <price>849.00</price>
+        <image>xps-13.webp</image>
+        <manufacturer>DELL</manufacturer>
         <condition>New</condition>
-        <discount>15.0</discount>
-    </tablet>
-    <tablet id="Surface4">
-        <name>Surface Pro 4</name>
-        <price>299.99</price>
-        <image>m2.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="XPS 17">
+        <name>XPS 17</name>
+        <price>2149.00</price>
+        <image>xps-17.webp</image>
+        <manufacturer>DELL</manufacturer>
         <condition>New</condition>
-        <discount>15.0</discount>
-    </tablet>
-    <tablet id="Samsung2">
-        <name>Samsung Tab 2</name>
-        <price>150.99</price>
-        <image>s1.jpg</image>
-        <manufacturer>Samsung</manufacturer>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="Yoga 9i">
+        <name>Yoga 9i</name>
+        <price>1124.99</price>
+        <image>yoga-9i.webp</image>
+        <manufacturer>Lenovo</manufacturer>
         <condition>New</condition>
-        <discount>15.0</discount>
-    </tablet>
-
-</TabletCatalog>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="Legion Slim 7">
+        <name>Yoga 9i</name>
+        <price>1399.99</price>
+        <image>legion-slim-7.webp</image>
+        <manufacturer>Lenovo</manufacturer>
+        <condition>New</condition>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="ThinkPad X1 Yoga Gen 6">
+        <name>ThinkPad X1 Yoga Gen 6</name>
+        <price>1411.60</price>
+        <image>thinkpad-gen6.webp</image>
+        <manufacturer>Lenovo</manufacturer>
+        <condition>New</condition>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="MacBook Air">
+        <name>MacBook Air</name>
+        <price>1199.00</price>
+        <image>macbook-air.jpeg</image>
+        <manufacturer>MacBook</manufacturer>
+        <condition>New</condition>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="MacBook Pro">
+        <name>MacBook Pro</name>
+        <price>1299.00</price>
+        <image>macbook-pro.jpeg</image>
+        <manufacturer>MacBook</manufacturer>
+        <condition>New</condition>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="Asus ZenBook">
+        <name>Asus ZenBook</name>
+        <price>1449.99</price>
+        <image>asus-zenbook.jpeg</image>
+        <manufacturer>Asus</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+    </laptop>
+    <laptop id="Asus ROG">
+        <name>Asus ROG</name>
+        <price>3499.99</price>
+        <image>ausu-rog.jpeg</image>
+        <manufacturer>Asus</manufacturer>
+        <condition>New</condition>
+        <discount>30.0</discount>
+    </laptop>
+    <laptop id="Asus TUF">
+        <name>Asus TUF</name>
+        <price>1499.99</price>
+        <image>asus-tuf.jpeg</image>
+        <manufacturer>Asus</manufacturer>
+        <condition>New</condition>
+        <discount>30.0</discount>
+    </laptop>
+</LaptopCatalog>
 
 <PhoneCatalog>
     <phone id="iPhone 14 Pro">

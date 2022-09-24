@@ -38,65 +38,43 @@ public class PrevAccessory extends HttpServlet {
 			hm.putAll(SaxParserDataStore.wearables);
 			name = "";
 		}
-		else
-		{
-			if(CategoryName.equals("fitness_watches"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-					if(entry.getValue().getRetailer().equals("Fitness Watches"))
-					{
-						hm.put(entry.getValue().getId(),entry.getValue());
-					}
+		else if(CategoryName.equals("fitness_watches")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Fitness Watches")) {
+					hm.put(entry.getValue().getId(),entry.getValue());
 				}
-				name = "Fitness Watches";
 			}
-			else if(CategoryName.equals("smart_watches"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-					if(entry.getValue().getRetailer().equals("Smart Watches"))
-					{
-						hm.put(entry.getValue().getId(),entry.getValue());
-					}
+			name = "Fitness Watches";
+		} else if(CategoryName.equals("smart_watches")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Smart Watches")) {
+					hm.put(entry.getValue().getId(),entry.getValue());
 				}
-				name = "Smart Watches";
 			}
-			else if(CategoryName.equals("Headphones"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-					if(entry.getValue().getRetailer().equals("Headphones"))
-					{
-						hm.put(entry.getValue().getId(),entry.getValue());
-					}
+			name = "Smart Watches";
+		} else if(CategoryName.equals("Headphones")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Headphones")) {
+					hm.put(entry.getValue().getId(),entry.getValue());
 				}
-				name = "Headphones";
 			}
-			else if(CategoryName.equals("vr"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-					if(entry.getValue().getRetailer().equals("Virtual Reality"))
-					{
-						hm.put(entry.getValue().getId(),entry.getValue());
-					}
+			name = "Headphones";
+		} else if(CategoryName.equals("vr")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Virtual Reality")) {
+					hm.put(entry.getValue().getId(),entry.getValue());
 				}
-				name = "Virtual Reality";
 			}
-			else if(CategoryName.equals("pt"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-					if(entry.getValue().getRetailer().equals("Pet Tracker"))
-					{
-						hm.put(entry.getValue().getId(),entry.getValue());
-					}
+			name = "Virtual Reality";
+		} else if(CategoryName.equals("pt")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Pet Tracker")) {
+					hm.put(entry.getValue().getId(),entry.getValue());
 				}
-				name = "Pet Tracker";
 			}
+			name = "Pet Tracker";
 		}
-		
+
 		/* Header, Left Navigation Bar are Printed.
 
 		All the Console and Console information are dispalyed in the Content Section
@@ -156,7 +134,7 @@ public class PrevAccessory extends HttpServlet {
 			
 			arr.add(acc.getValue());
 		}	
-		
+
 		System.out.println("vishal");
 		if (j > 0){
 		pw.print("<td><li><form method='post' action='PrevAccessory'>" +
@@ -193,10 +171,6 @@ public class PrevAccessory extends HttpServlet {
 				    "<input type='submit' value='ViewReview' class='btnreview'></form></li>");
 		
 			pw.print("</ul></div></td>");
-			
-			
-			
-			
 		}
 		pw.print("<td><li><form method='post' action='NextAccessory'>" +
 					"<input type='hidden' name='name' value='"+arr+"'>"+

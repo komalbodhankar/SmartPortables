@@ -38,11 +38,11 @@ import org.xml.sax.helpers.DefaultHandler;
 public class SaxParserDataStore extends DefaultHandler {
     Wearable wearable;
     Phone phone;
-    Tablet tablet;
+    Laptop laptop;
     Accessory accessory;
     static HashMap<String, Wearable> wearables;
     static HashMap<String, Phone> phones;
-    static HashMap<String, Tablet> tablets;
+    static HashMap<String, Laptop> laptops;
     static HashMap<String, Accessory> accessories;
     String consoleXmlFileName;
     HashMap<String, String> accessoryHashMap;
@@ -56,7 +56,7 @@ public class SaxParserDataStore extends DefaultHandler {
         this.consoleXmlFileName = consoleXmlFileName;
         wearables = new HashMap<String, Wearable>();
         phones = new HashMap<String, Phone>();
-        tablets = new HashMap<String, Tablet>();
+        laptops = new HashMap<String, Laptop>();
         accessories = new HashMap<String, Accessory>();
         accessoryHashMap = new HashMap<String, String>();
         parseDocument();
@@ -108,10 +108,10 @@ public class SaxParserDataStore extends DefaultHandler {
                 wearable = new Wearable();
                 wearable.setId(attributes.getValue("id"));
             }
-            if (elementName.equalsIgnoreCase("tablet")) {
-                currentElement = "tablet";
-                tablet = new Tablet();
-                tablet.setId(attributes.getValue("id"));
+            if (elementName.equalsIgnoreCase("laptop")) {
+                currentElement = "laptop";
+                laptop = new Laptop();
+                laptop.setId(attributes.getValue("id"));
             }
             if (elementName.equalsIgnoreCase("phone")) {
                 currentElement = "phone";
@@ -141,8 +141,8 @@ public class SaxParserDataStore extends DefaultHandler {
                 return;
             }
 
-            if (element.equals("tablet")) {
-                tablets.put(tablet.getId(), tablet);
+            if (element.equals("laptop")) {
+                laptops.put(laptop.getId(), laptop);
                 return;
             }
             if (element.equals("phone")) {
@@ -166,8 +166,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setImage(elementValueRead);
                 if (currentElement.equals("phone"))
                     phone.setImage(elementValueRead);
-                if (currentElement.equals("tablet"))
-                    tablet.setImage(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setImage(elementValueRead);
                 if (currentElement.equals("accessory"))
                     accessory.setImage(elementValueRead);
                 return;
@@ -179,8 +179,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setDiscount(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("phone"))
                     phone.setDiscount(Double.parseDouble(elementValueRead));
-                if (currentElement.equals("tablet"))
-                    tablet.setDiscount(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("laptop"))
+                    laptop.setDiscount(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("accessory"))
                     accessory.setDiscount(Double.parseDouble(elementValueRead));
                 return;
@@ -192,8 +192,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setCondition(elementValueRead);
                 if (currentElement.equals("phone"))
                     phone.setCondition(elementValueRead);
-                if (currentElement.equals("tablet"))
-                    tablet.setCondition(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setCondition(elementValueRead);
                 if (currentElement.equals("accessory"))
                     accessory.setCondition(elementValueRead);
                 return;
@@ -204,8 +204,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setRetailer(elementValueRead);
                 if (currentElement.equals("phone"))
                     phone.setRetailer(elementValueRead);
-                if (currentElement.equals("tablet"))
-                    tablet.setRetailer(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setRetailer(elementValueRead);
                 if (currentElement.equals("accessory"))
                     accessory.setRetailer(elementValueRead);
                 return;
@@ -216,8 +216,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setName(elementValueRead);
                 if (currentElement.equals("phone"))
                     phone.setName(elementValueRead);
-                if (currentElement.equals("tablet"))
-                    tablet.setName(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setName(elementValueRead);
                 if (currentElement.equals("accessory"))
                     accessory.setName(elementValueRead);
                 return;
@@ -228,8 +228,8 @@ public class SaxParserDataStore extends DefaultHandler {
                     wearable.setPrice(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("phone"))
                     phone.setPrice(Double.parseDouble(elementValueRead));
-                if (currentElement.equals("tablet"))
-                    tablet.setPrice(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("laptop"))
+                    laptop.setPrice(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("accessory"))
                     accessory.setPrice(Double.parseDouble(elementValueRead));
             }
@@ -254,8 +254,8 @@ public class SaxParserDataStore extends DefaultHandler {
     public static void addHashmap() {
         String TOMCAT_HOME = System.getProperty("catalina.home");
         SaxParserDataStore saxParserDataStore = new SaxParserDataStore(TOMCAT_HOME + "/webapps/SmartPortables/ProductCatalog.xml");
-        System.out.println("********************* here phone ***************");
-        System.out.println(saxParserDataStore.phones);
-        System.out.println("********************* here phone ***************");
+        System.out.println("********************* here laptop ***************");
+        System.out.println(saxParserDataStore.laptop);
+        System.out.println("********************* here laptop ***************");
     }
 }

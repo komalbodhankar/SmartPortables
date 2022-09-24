@@ -54,8 +54,7 @@ public class Cart extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>Cart("+utility.CartCount()+")</a>");
 		pw.print("</h2><div class='entry'>");
 		pw.print("<form name ='Cart' action='CheckOut' method='post'>");
-		if(utility.CartCount()>0)
-		{
+		if(utility.CartCount()>0) {
 			pw.print("<table  class='gridtable'>");
 			int i = 1;
 			double total = 0;

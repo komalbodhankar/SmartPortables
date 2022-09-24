@@ -32,64 +32,44 @@ public class NextAccessory extends HttpServlet {
 			hm.putAll(SaxParserDataStore.wearables);
 			name = "";
 		}
-		else
-		{
-		   if(CategoryName.equals("fitness_watches"))
-		   {
-			 for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			 {
-				if(entry.getValue().getRetailer().equals("Fitness Watches"))
-				 {
+		else if(CategoryName.equals("fitness_watches")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				if(entry.getValue().getRetailer().equals("Fitness Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 			 }
-				name = "Fitness Watches";
+			name = "Fitness Watches";
 		   }
-		   else if(CategoryName.equals("smart_watches"))
-		    {
-			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-				 if(entry.getValue().getRetailer().equals("Smart Watches"))
-				 {
+		   else if(CategoryName.equals("smart_watches")) {
+			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				 if(entry.getValue().getRetailer().equals("Smart Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 				 name = "Smart Watches";
-			}
-			else if(CategoryName.equals("Headphones"))
-			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-				{
-				 if(entry.getValue().getRetailer().equals("Headphones"))
-				 {
+			} else if(CategoryName.equals("Headphones")) {
+				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				 if(entry.getValue().getRetailer().equals("Headphones")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			   	 name = "Headphones";
-			}
-		   else if(CategoryName.equals("vr"))
-		   {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			   {
-				   if(entry.getValue().getRetailer().equals("Virtual Reality"))
-				   {
+			} else if(CategoryName.equals("vr")) {
+			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				   if(entry.getValue().getRetailer().equals("Virtual Reality")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
 			   }
 			   name = "Virtual Reality";
-		   }
-		   else if(CategoryName.equals("pt"))
-		   {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
-			   {
-				   if(entry.getValue().getRetailer().equals("Pet Tracker"))
-				   {
+		   } else if(CategoryName.equals("pt")) {
+			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				   if(entry.getValue().getRetailer().equals("Pet Tracker")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
 			   }
 			   name = "Pet Tracker";
 		   }
-		}
+
 		
 		/* Header, Left Navigation Bar are Printed.
 

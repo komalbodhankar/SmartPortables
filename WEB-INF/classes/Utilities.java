@@ -212,10 +212,10 @@ public class Utilities extends HttpServlet{
 			OrderItem orderitem = new OrderItem(phone.getName(), phone.getPrice(), phone.getImage(), phone.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("tablets")){
-			Tablet tablet = null;
-			tablet = SaxParserDataStore.tablets.get(name);
-			OrderItem orderitem = new OrderItem(tablet.getName(), tablet.getPrice(), tablet.getImage(), tablet.getRetailer());
+		if(type.equals("laptops")){
+			Laptop laptop = null;
+			laptop = SaxParserDataStore.laptops.get(name);
+			OrderItem orderitem = new OrderItem(laptop.getName(), laptop.getPrice(), laptop.getImage(), laptop.getRetailer());
 			orderItems.add(orderitem);
 		}
 		if(type.equals("accessories")){	
@@ -291,9 +291,9 @@ public class Utilities extends HttpServlet{
 	
 	/* getTablets Functions returns the Hashmap with all Tablet in the store.*/
 
-	public HashMap<String, Tablet> getTablets(){
-			HashMap<String, Tablet> hm = new HashMap<String, Tablet>();
-			hm.putAll(SaxParserDataStore.tablets);
+	public HashMap<String, Laptop> getTablets(){
+			HashMap<String, Laptop> hm = new HashMap<String, Laptop>();
+			hm.putAll(SaxParserDataStore.laptops);
 			return hm;
 	}
 	
@@ -321,7 +321,7 @@ public class Utilities extends HttpServlet{
 
 	public ArrayList<String> getProductsTablets(){		
 		ArrayList<String> ar = new ArrayList<String>();
-		for(Map.Entry<String, Tablet> entry : getTablets().entrySet()){
+		for(Map.Entry<String, Laptop> entry : getTablets().entrySet()){
 			ar.add(entry.getValue().getName());
 		}
 		return ar;
