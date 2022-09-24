@@ -14,9 +14,9 @@ import java.io.*;
 public class ViewOrder extends HttpServlet {
 	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
+
 
 		Utilities utility = new Utilities(request, pw);
 		//check if the user is logged in
@@ -59,6 +59,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 		}
 		
 

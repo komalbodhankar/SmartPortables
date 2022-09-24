@@ -52,14 +52,26 @@ public class Utilities extends HttpServlet {
             result = result + "<div id='menu' style='float: right;'><ul>";
             if (session.getAttribute("username") != null) {
                 String username = session.getAttribute("username").toString();
+                UserType userType = UserType.getEnum(session.getAttribute("usertype").toString());
+                System.out.println("---" + userType + "---");
                 username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
-                result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
-                        + "<li><a><span class='glyphicon'>Hello," + username + "</span></a></li>"
-                        + "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
-                        + "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
-            } else
-                result = result + "<li><a href='ViewOrder'><span class='glyphicon'>View Order</span></a></li>" + "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
-            result = result + "<li><a href='Cart'><span class='glyphicon'>Cart(" + CartCount() + ")</span></a></li></ul></div></div><div id='page'>";
+                result = result + "<li><a><span class='glyphicon'>Hello," + username + "</span></a></li>";
+                switch (userType){
+                    case Customer : result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
+                            + "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
+                            + "<li><a href='Cart'><span class='glyphicon'>Cart(" + CartCount() + ")</span></a></li>";
+                    break;
+                    case SalesMan: result = result + "<li><a href='CreateUser'><span class='glyphicon'>CreateUser</span></a></li>"
+                            + "<li><a href='ViewCustomerOrder'><span class='glyphicon'>View Orders</span></a></li>"
+                            + "<li><a href='Cart'><span class='glyphicon'>Cart(" + CartCount() + ")</span></a></li>";
+                    break;
+                }
+                result += "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+            } else {
+                result += "<li><a href='ViewOrder'><span class='glyphicon'>View Order</span></a></li>";
+                result += "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
+            }
+            result += "</ul></div></div><div id='page'>";
             pw.print(result);
         } else
             pw.print(result);
@@ -121,7 +133,7 @@ public class Utilities extends HttpServlet {
         return true;
     }
 
-    /*  username Function returns the username from the session variable.*/
+    /*  username Function returns th    e username from the session variable.*/
 
     public String username() {
         if (session.getAttribute("username") != null)
@@ -201,24 +213,24 @@ public class Utilities extends HttpServlet {
         if (type.equals("wearables")) {
             Wearable wearable;
             wearable = SaxParserDataStore.wearables.get(name);
-            OrderItem orderitem = new OrderItem(wearable.getName(), wearable.getPrice(), wearable.getImage(), wearable.getRetailer());
+            OrderItem orderitem = new OrderItem(wearable.getName(), wearable.getPrice(), wearable.getImage(), wearable.getRetailer(), wearable.getDiscount(), wearable.getRebate());
             orderItems.add(orderitem);
         }
         if (type.equals("phones")) {
             Phone phone = null;
             phone = SaxParserDataStore.phones.get(name);
-            OrderItem orderitem = new OrderItem(phone.getName(), phone.getPrice(), phone.getImage(), phone.getRetailer());
+            OrderItem orderitem = new OrderItem(phone.getName(), phone.getPrice(), phone.getImage(), phone.getRetailer(), phone.getDiscount(), phone.getRebate());
             orderItems.add(orderitem);
         }
         if (type.equals("laptops")) {
             Laptop laptop = null;
             laptop = SaxParserDataStore.laptops.get(name);
-            OrderItem orderitem = new OrderItem(laptop.getName(), laptop.getPrice(), laptop.getImage(), laptop.getRetailer());
+            OrderItem orderitem = new OrderItem(laptop.getName(), laptop.getPrice(), laptop.getImage(), laptop.getRetailer(), laptop.getDiscount(), laptop.getRebate());
             orderItems.add(orderitem);
         }
         if (type.equals("accessories")) {
             Accessory accessory = SaxParserDataStore.accessories.get(name);
-            OrderItem orderitem = new OrderItem(accessory.getName(), accessory.getPrice(), accessory.getImage(), accessory.getRetailer());
+            OrderItem orderitem = new OrderItem(accessory.getName(), accessory.getPrice(), accessory.getImage(), accessory.getRetailer(), accessory.getDiscount(), accessory.getRebate());
             orderItems.add(orderitem);
         }
 
@@ -226,7 +238,7 @@ public class Utilities extends HttpServlet {
 
     // store the payment details for orders
     public void storePayment(int orderId,
-                             String orderName, double orderPrice, String userAddress, String creditCardNo) {
+                             String orderName, double orderPrice, double discount, double rebate, String userAddress, String creditCardNo) {
         HashMap<Integer, ArrayList<OrderPayment>> orderPayments = new HashMap<>();
         String TOMCAT_HOME = System.getProperty("catalina.home");
         // get the payment details file
@@ -247,7 +259,7 @@ public class Utilities extends HttpServlet {
             orderPayments.put(orderId, arr);
         }
         ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);
-        OrderPayment orderpayment = new OrderPayment(orderId, username(), orderName, orderPrice, userAddress, creditCardNo);
+        OrderPayment orderpayment = new OrderPayment(orderId, username(), orderName, orderPrice, discount, rebate, userAddress, creditCardNo);
         listOrderPayment.add(orderpayment);
 
         // add order details into file

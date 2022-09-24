@@ -46,8 +46,8 @@ public class Cart extends HttpServlet {
 			PrintWriter pw = response.getWriter();
 			Utilities utility = new Utilities(request,pw);
 			Carousel carousel = new Carousel();
+			HttpSession session = request.getSession(true);
 			if(!utility.isLoggedin()){
-				HttpSession session = request.getSession(true);
 				session.setAttribute("login_msg", "Please Login to add items to cart");
 				response.sendRedirect("Login");
 				return;
@@ -65,9 +65,13 @@ public class Cart extends HttpServlet {
 				pw.print("<th>Number</th>");
 				pw.print("<th>Order Name</th>");
 				pw.print("<th>Order Price</th>");
+				pw.print("<th>Discount</th>");
+				pw.print("<th>Rebate</th>");
+				pw.print("<th>Remove Item</th>");
 				pw.print("</tr>");
 				int i = 1;
 				double total = 0;
+				double totalRebate = 0;
 				for (OrderItem oi : utility.getCustomerOrders())
 				{
 					pw.print("<tr>");
@@ -75,21 +79,29 @@ public class Cart extends HttpServlet {
 					pw.print("<td>"+oi.getName()+"</td><td> "+oi.getPrice()+"</td>");
 					pw.print("<input type='hidden' name='orderName' value='"+oi.getName()+"'>");
 					pw.print("<input type='hidden' name='orderPrice' value='"+oi.getPrice()+"'>");
-					pw.print("</tr>");
+					pw.print("<td>" + (oi.getDiscount()) + "</td>");
+					pw.print("<td>" + (oi.getRebate()) + "</td>");
 					pw.print("<td class='buttonContainer'>" +
 							"<form style='margin:auto' action='RemoveFromCart' method='post'>" +
 							"<input type='hidden' name='orderIndex' value='" + (i - 1) + "'>" +
 							"<button class='mainButton' type='submit' value='submit'>Remove</button>" +
 							"</form>" +
 							"</td>");
-					pw.print("</tr>");
-					total = total +oi.getPrice();
+					pw.print("<tr></tr>");
+					total = total +oi.getPrice() - oi.getDiscount();
+					totalRebate += oi.getRebate();
 					i++;
 				}
 				pw.print("<input type='hidden' name='orderTotal' value='"+total+"'>");
+				pw.print("<input type='hidden' name='orderTotalRebate' value='" + totalRebate + "'>");
 				pw.print("<tr><th></th><th>Total</th><th>"+total+"</th>");
-				pw.print("<tr><td></td><td></td><td><input type='submit' name='CheckOut' value='CheckOut' class='btnbuy' /></td>");
-				pw.print("</table></form>");
+				pw.print("</table>");
+
+				pw.print("<form name ='Cart' action='CheckOut' method='post'>");
+				pw.print("<input type='hidden' name='orderTotal' value='" + total + "'>");
+				pw.print("<input type='hidden' name='orderTotalRebate' value='" + totalRebate + "'>");
+				pw.print("<input type='submit' name='CheckOut' value='CheckOut' class='btnbuy' />");
+				pw.print("</form>");
 				/* This code is calling Carousel.java code to implement carousel feature*/
 				pw.print(carousel.carouselfeature(utility));
 			}

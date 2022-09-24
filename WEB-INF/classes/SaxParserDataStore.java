@@ -287,8 +287,5 @@ public class SaxParserDataStore extends DefaultHandler {
     public static void addHashmap() {
         String TOMCAT_HOME = System.getProperty("catalina.home");
         SaxParserDataStore saxParserDataStore = new SaxParserDataStore(TOMCAT_HOME + "/webapps/SmartPortables/ProductCatalog.xml");
-        System.out.println("********************* here laptop ***************");
-        System.out.println(saxParserDataStore.laptop);
-        System.out.println("********************* here laptop ***************");
     }
 }

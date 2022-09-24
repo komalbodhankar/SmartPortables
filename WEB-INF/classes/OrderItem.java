@@ -22,14 +22,17 @@ public class OrderItem extends HttpServlet{
 	private double price;
 	private String image;
 	private String retailer;
+	private double discount;
+	private double rebate;
 	
-	public OrderItem(String name, double price, String image, String retailer){
+	public OrderItem(String name, double price, String image, String retailer, double discount, double rebate){
 		this.name=name;
 		this.price=price;
 		this.image=image;
 		this.retailer = retailer;
+		this.discount = discount;
+		this.rebate = rebate;
 	}
-
 	public String getName() {
 		return name;
 	}
@@ -60,5 +63,21 @@ public class OrderItem extends HttpServlet{
 
 	public void setRetailer(String retailer) {
 		this.retailer = retailer;
+	}
+
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
+	public double getRebate() {
+		return rebate;
+	}
+
+	public void setRebate(double rebate) {
+		this.rebate = rebate;
 	}
 }
