@@ -8,6 +8,7 @@
         <price>99.95</price>
         <image>fitbit-inspire3.png</image>
         <manufacturer>Fitness Watches</manufacturer>
+        <category>fitness_watches</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -21,6 +22,7 @@
         <price>149.95</price>
         <image>fitbit-charge-5.png</image>
         <manufacturer>Fitness Watches</manufacturer>
+        <category>fitness_watches</category>
         <condition>New</condition>
         <discount>15.0</discount>
         <rebate>2.0</rebate>
@@ -34,6 +36,7 @@
         <price>129.95</price>
         <image>fitbit-luxe.png</image>
         <manufacturer>Fitness Watches</manufacturer>
+        <category>fitness_watches</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -47,6 +50,7 @@
         <price>799</price>
         <image>apple-ultra-orange.jpeg</image>
         <manufacturer>Smart Watches</manufacturer>
+        <category>smart_watches</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -60,6 +64,7 @@
         <price>279.99</price>
         <image>apple_se_gold.jpeg</image>
         <manufacturer>Smart Watches</manufacturer>
+        <category>smart_watches</category>
         <condition>New</condition>
         <discount>15.0</discount>
         <rebate>2.0</rebate>
@@ -70,6 +75,7 @@
         <price>399</price>
         <image>apple-watch-8.jpeg</image>
         <manufacturer>Smart Watches</manufacturer>
+        <category>smart_watches</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -80,6 +86,7 @@
         <price>29.99</price>
         <image>jbl-tune-500.jpeg</image>
         <manufacturer>Headphones</manufacturer>
+        <category>headphones</category>
         <condition>New</condition>
         <discount>0.0</discount>
         <rebate>2.0</rebate>
@@ -90,6 +97,7 @@
         <price>429</price>
         <image>apple-airpods-max.png</image>
         <manufacturer>Headphones</manufacturer>
+        <category>headphones</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -100,6 +108,7 @@
         <price>59.99</price>
         <image>sony-whch510.png</image>
         <manufacturer>Headphones</manufacturer>
+        <category>headphones</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -110,6 +119,7 @@
         <price>399.99</price>
         <image>meta-quest-2-adv.jpeg</image>
         <manufacturer>Virtual Reality</manufacturer>
+        <category>vr</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -120,6 +130,7 @@
         <price>99.99</price>
         <image>sony-ps-vr.jpeg</image>
         <manufacturer>Virtual Reality</manufacturer>
+        <category>vr</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -130,6 +141,7 @@
         <price>399.99</price>
         <image>hvreverbg2.png</image>
         <manufacturer>Virtual Reality</manufacturer>
+        <category>vr</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -140,6 +152,7 @@
         <price>149.99</price>
         <image>yellow_collar_1.png</image>
         <manufacturer>Pet Tracker</manufacturer>
+        <category>pt</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -150,6 +163,7 @@
         <price>34.95</price>
         <image>whistle-health.webp</image>
         <manufacturer>Pet Tracker</manufacturer>
+        <category>pt</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -160,6 +174,7 @@
         <price>129.99</price>
         <image>jiobit.png</image>
         <manufacturer>Pet Tracker</manufacturer>
+        <category>pt</category>
         <condition>New</condition>
         <discount>13.0</discount>
         <rebate>2.0</rebate>
@@ -173,6 +188,8 @@
         <price>499.90</price>
         <image>hp-pavilon.png</image>
         <manufacturer>HP</manufacturer>
+        <category>hp</category>
+        <warranty>25</warranty>
         <condition>New</condition>
         <discount>40.0</discount>
         <rebate>2.0</rebate>
@@ -183,6 +200,7 @@
         <price>1149.99</price>
         <image>hp-spectre.png</image>
         <manufacturer>HP</manufacturer>
+        <category>hp</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -193,6 +211,7 @@
         <price>829.99</price>
         <image>hp-envy.png</image>
         <manufacturer>HP</manufacturer>
+        <category>hp</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -203,6 +222,7 @@
         <price>799.99</price>
         <image>inspiron-16.jpeg</image>
         <manufacturer>DELL</manufacturer>
+        <category>dell</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -213,6 +233,7 @@
         <price>849.00</price>
         <image>xps-13.webp</image>
         <manufacturer>DELL</manufacturer>
+        <category>dell</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -223,6 +244,7 @@
         <price>2149.00</price>
         <image>xps-17.webp</image>
         <manufacturer>DELL</manufacturer>
+        <category>dell</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -233,6 +255,7 @@
         <price>1124.99</price>
         <image>yoga-9i.webp</image>
         <manufacturer>Lenovo</manufacturer>
+        <category>lenovo</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -243,6 +266,7 @@
         <price>1399.99</price>
         <image>legion-slim-7.webp</image>
         <manufacturer>Lenovo</manufacturer>
+        <category>lenovo</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -253,6 +277,7 @@
         <price>1411.60</price>
         <image>thinkpad-gen6.webp</image>
         <manufacturer>Lenovo</manufacturer>
+        <category>lenovo</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -263,6 +288,7 @@
         <price>1199.00</price>
         <image>macbook-air.jpeg</image>
         <manufacturer>MacBook</manufacturer>
+        <category>applelap</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -273,6 +299,7 @@
         <price>1299.00</price>
         <image>macbook-pro.jpeg</image>
         <manufacturer>MacBook</manufacturer>
+        <category>applelap</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -283,6 +310,7 @@
         <price>1449.99</price>
         <image>asus-zenbook.jpeg</image>
         <manufacturer>Asus</manufacturer>
+        <category>asus</category>
         <condition>New</condition>
         <discount>40.0</discount>
         <rebate>2.0</rebate>
@@ -293,6 +321,7 @@
         <price>3499.99</price>
         <image>ausu-rog.jpeg</image>
         <manufacturer>Asus</manufacturer>
+        <category>asus</category>
         <condition>New</condition>
         <discount>30.0</discount>
         <rebate>2.0</rebate>
@@ -303,6 +332,7 @@
         <price>1499.99</price>
         <image>asus-tuf.jpeg</image>
         <manufacturer>Asus</manufacturer>
+        <category>asus</category>
         <condition>New</condition>
         <discount>30.0</discount>
         <rebate>2.0</rebate>
@@ -316,6 +346,7 @@
         <price>999</price>
         <image>iphone-14-pro-deeppurple.jpeg</image>
         <manufacturer>Apple</manufacturer>
+        <category>apple</category>
         <condition>New</condition>
         <discount>12.0</discount>
         <rebate>2.0</rebate>
@@ -326,6 +357,7 @@
         <price>799</price>
         <image>iphone-14-model.jpeg</image>
         <manufacturer>Apple</manufacturer>
+        <category>apple</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -336,6 +368,7 @@
         <price>599</price>
         <image>iphone-13-model.jpeg</image>
         <manufacturer>Apple</manufacturer>
+        <category>apple</category>
         <condition>New</condition>
         <discount>11.0</discount>
         <rebate>2.0</rebate>
@@ -346,6 +379,7 @@
         <price>649</price>
         <image>iphone-12-black.jpeg</image>
         <manufacturer>Apple</manufacturer>
+        <category>apple</category>
         <condition>New</condition>
         <discount>15.0</discount>
         <rebate>2.0</rebate>
@@ -356,6 +390,7 @@
         <price>479</price>
         <image>iphone-se-midnight.jpeg</image>
         <manufacturer>Apple</manufacturer>
+        <category>apple</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -366,6 +401,7 @@
         <price>599</price>
         <image>google-pixel-6.png</image>
         <manufacturer>Google Pixel</manufacturer>
+        <category>pixel</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -376,6 +412,7 @@
         <price>699</price>
         <image>google-pixel-6a.png</image>
         <manufacturer>Google Pixel</manufacturer>
+        <category>pixel</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -386,6 +423,7 @@
         <price>899</price>
         <image>google-pixel-6-pro.png</image>
         <manufacturer>Google Pixel</manufacturer>
+        <category>pixel</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -396,6 +434,7 @@
         <price>899.99</price>
         <image>galaxy-fold4.jpeg</image>
         <manufacturer>Samsung Galaxy</manufacturer>
+        <category>samsung</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -406,6 +445,7 @@
         <price>479.99</price>
         <image>galaxy-flip4.jpeg</image>
         <manufacturer>Samsung Galaxy</manufacturer>
+        <category>samsung</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -416,6 +456,7 @@
         <price>700</price>
         <image>galaxy-s22.jpeg</image>
         <manufacturer>Samsung Galaxy</manufacturer>
+        <category>samsung</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -426,6 +467,7 @@
         <price>799</price>
         <image>oneplus-9-pro.png</image>
         <manufacturer>One Plus</manufacturer>
+        <category>oneplus</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -436,6 +478,7 @@
         <price>899</price>
         <image>oneplus-10-pro.png</image>
         <manufacturer>One Plus</manufacturer>
+        <category>oneplus</category>
         <condition>New</condition>
         <discount>10.0</discount>
         <rebate>2.0</rebate>
@@ -446,6 +489,7 @@
         <price>649</price>
         <image>oneplus-10t.png</image>
         <manufacturer>One Plus</manufacturer>
+        <category>oneplus</category>
         <condition>New</condition>
         <discount>20.0</discount>
         <rebate>2.0</rebate>
@@ -456,6 +500,7 @@
         <price>499</price>
         <image>nokia-g100.png</image>
         <manufacturer>Nokia</manufacturer>
+        <category>nokia</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -466,6 +511,7 @@
         <price>599</price>
         <image>nokia-g400.png</image>
         <manufacturer>Nokia</manufacturer>
+        <category>nokia</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>
@@ -476,6 +522,7 @@
         <price>399</price>
         <image>nokia-xr20.png</image>
         <manufacturer>Nokia</manufacturer>
+        <category>nokia</category>
         <condition>New</condition>
         <discount>5.0</discount>
         <rebate>2.0</rebate>

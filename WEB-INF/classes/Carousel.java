@@ -3,26 +3,15 @@ all the accessories related to a particular product. This java code is getting c
 accessories realated to product will get displayed in the carousel.*/
   
 
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.*;			
-			
-			
+
+
 public class Carousel{
 
 	public String  carouselfeature(Utilities utility){
 
-		HashMap<String, Wearable> hm = new HashMap<>();
+		HashMap<String, Product> hm = new HashMap<>();
 
 		StringBuilder sb = new StringBuilder();
 		String myCarousel = null;
@@ -59,7 +48,7 @@ public class Carousel{
 				*/
 					sb.append("<div class='carousel-inner'>");
 
-					Wearable console1 = hm.get(oi.getName());
+					Product console1 = hm.get(oi.getName());
 					System.out.print(oi.getName());
 					int k = 0; int size= hm.size();
 					for(Map.Entry<String, String> acc:console1.getAccessories().entrySet()) {

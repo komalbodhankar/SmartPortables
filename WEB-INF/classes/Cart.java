@@ -81,6 +81,7 @@ public class Cart extends HttpServlet {
 					pw.print("<input type='hidden' name='orderPrice' value='"+oi.getPrice()+"'>");
 					pw.print("<td>" + (oi.getDiscount()) + "</td>");
 					pw.print("<td>" + (oi.getRebate()) + "</td>");
+					pw.print("<td>" + (oi.getbuyWarranty() ? 25: 0) + "</td>");
 					pw.print("<td class='buttonContainer'>" +
 							"<form style='margin:auto' action='RemoveFromCart' method='post'>" +
 							"<input type='hidden' name='orderIndex' value='" + (i - 1) + "'>" +
@@ -88,7 +89,7 @@ public class Cart extends HttpServlet {
 							"</form>" +
 							"</td>");
 					pw.print("<tr></tr>");
-					total = total +oi.getPrice() - oi.getDiscount();
+					total = total +oi.getPrice() + (oi.getbuyWarranty() ? 25: 0) - oi.getDiscount();
 					totalRebate += oi.getRebate();
 					i++;
 				}

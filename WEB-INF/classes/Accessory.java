@@ -28,9 +28,13 @@ public class Accessory extends HttpServlet {
 	private double rebate;
 
 	private String description;
+
+	private boolean buyWarranty;
+
+
 	
 	public Accessory(String id,String name, double price, String image,
-					 String retailer,String condition,double discount, double rebate, String description){
+					 String retailer,String condition,double discount, double rebate, String description, boolean buyWarranty){
 		this.name=name;
 		this.price=price;
 		this.image=image;
@@ -39,6 +43,7 @@ public class Accessory extends HttpServlet {
 		this.retailer = retailer;
 		this.description = description;
 		this.rebate = rebate;
+		this.buyWarranty = buyWarranty;
 	}
 	
 	
@@ -114,6 +119,14 @@ public class Accessory extends HttpServlet {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean getbuyWarranty() {
+		return buyWarranty;
+	}
+
+	public void setbuyWarranty(boolean buyWarranty) {
+		this.buyWarranty = buyWarranty;
 	}
 	
 

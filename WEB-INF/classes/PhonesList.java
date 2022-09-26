@@ -23,7 +23,7 @@ public class PhonesList extends HttpServlet {
 				
 		String name = null;
 		String CategoryName = request.getParameter("maker");
-		HashMap<String, Phone> hm = new HashMap<String, Phone>();
+		HashMap<String, Product> hm = new HashMap<>();
 		
 		if(CategoryName==null)
 		{
@@ -32,7 +32,7 @@ public class PhonesList extends HttpServlet {
 		}
 		else {
 			if (CategoryName.equals("apple")) {
-				for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+				for (Map.Entry<String, Product> entry : SaxParserDataStore.phones.entrySet()) {
 					if (entry.getValue().getRetailer().equals("Apple")) {
 						hm.put(entry.getValue().getId(), entry.getValue());
 					}
@@ -40,7 +40,7 @@ public class PhonesList extends HttpServlet {
 				name = "Apple";
 			} else {
 				if (CategoryName.equals("pixel")) {
-					for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+					for (Map.Entry<String, Product> entry : SaxParserDataStore.phones.entrySet()) {
 						if (entry.getValue().getRetailer().equals("Google Pixel")) {
 							hm.put(entry.getValue().getId(), entry.getValue());
 						}
@@ -49,7 +49,7 @@ public class PhonesList extends HttpServlet {
 			}else
 				{
 				if (CategoryName.equals("samsung")) {
-					for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+					for (Map.Entry<String, Product> entry : SaxParserDataStore.phones.entrySet()) {
 						if (entry.getValue().getRetailer().equals("Samsung Galaxy")) {
 							hm.put(entry.getValue().getId(), entry.getValue());
 						}
@@ -57,7 +57,7 @@ public class PhonesList extends HttpServlet {
 					name = "Samsung Galaxy";
 			}else {
 					if (CategoryName.equals("oneplus")) {
-						for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+						for (Map.Entry<String, Product> entry : SaxParserDataStore.phones.entrySet()) {
 							if (entry.getValue().getRetailer().equals("One Plus")) {
 								hm.put(entry.getValue().getId(), entry.getValue());
 							}
@@ -65,7 +65,7 @@ public class PhonesList extends HttpServlet {
 						name = "One Plus";
 			}else {
 					if (CategoryName.equals("nokia")) {
-						for (Map.Entry<String, Phone> entry : SaxParserDataStore.phones.entrySet()) {
+						for (Map.Entry<String, Product> entry : SaxParserDataStore.phones.entrySet()) {
 							if (entry.getValue().getRetailer().equals("Nokia")) {
 								hm.put(entry.getValue().getId(), entry.getValue());
 							}
@@ -92,8 +92,8 @@ public class PhonesList extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>"+name+" Phones</a>");
 		pw.print("</h2><div class='entry'><table id='bestseller'>");
 		int i = 1; int size= hm.size();
-		for(Map.Entry<String, Phone> entry : hm.entrySet()){
-			Phone phone = entry.getValue();
+		for(Map.Entry<String, Product> entry : hm.entrySet()){
+			Product phone = entry.getValue();
 			if(i%3==1) pw.print("<tr>");
 			pw.print("<td><div id='shop_item'>");
 			pw.print("<h3>"+phone.getName()+"</h3>");

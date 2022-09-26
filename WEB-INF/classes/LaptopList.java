@@ -23,7 +23,7 @@ public class LaptopList extends HttpServlet {
 
 		String name = null;
 		String CategoryName = request.getParameter("maker");
-		HashMap<String, Laptop> hm = new HashMap<String, Laptop>();
+		HashMap<String, Product> hm = new HashMap<>();
 
 		if (CategoryName == null)	
 		{
@@ -34,7 +34,7 @@ public class LaptopList extends HttpServlet {
 		{
 			if(CategoryName.equals("hp"))
 			{	
-				for(Map.Entry<String,Laptop> entry : SaxParserDataStore.laptops.entrySet()) {
+				for(Map.Entry<String,Product> entry : SaxParserDataStore.laptops.entrySet()) {
 				  if(entry.getValue().getRetailer().equals("HP")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
@@ -43,7 +43,7 @@ public class LaptopList extends HttpServlet {
 			} 
 			else if (CategoryName.equals("dell"))
 			{
-				for(Map.Entry<String,Laptop> entry : SaxParserDataStore.laptops.entrySet()) {
+				for(Map.Entry<String,Product> entry : SaxParserDataStore.laptops.entrySet()) {
 				  if(entry.getValue().getRetailer().equals("DELL")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
@@ -52,7 +52,7 @@ public class LaptopList extends HttpServlet {
 			} 
 			else if (CategoryName.equals("lenovo"))
 			{
-				for(Map.Entry<String,Laptop> entry : SaxParserDataStore.laptops.entrySet()) {
+				for(Map.Entry<String,Product> entry : SaxParserDataStore.laptops.entrySet()) {
 				  if(entry.getValue().getRetailer().equals("Lenovo")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
@@ -61,7 +61,7 @@ public class LaptopList extends HttpServlet {
 			}
 			else if (CategoryName.equals("applelap"))
 			{
-				for(Map.Entry<String,Laptop> entry : SaxParserDataStore.laptops.entrySet()) {
+				for(Map.Entry<String,Product> entry : SaxParserDataStore.laptops.entrySet()) {
 					if(entry.getValue().getRetailer().equals("MacBook")) {
 						hm.put(entry.getValue().getId(),entry.getValue());
 					}
@@ -70,7 +70,7 @@ public class LaptopList extends HttpServlet {
 			}
 			else if (CategoryName.equals("asus"))
 			{
-				for(Map.Entry<String,Laptop> entry : SaxParserDataStore.laptops.entrySet()) {
+				for(Map.Entry<String,Product> entry : SaxParserDataStore.laptops.entrySet()) {
 					if(entry.getValue().getRetailer().equals("Asus")) {
 						hm.put(entry.getValue().getId(),entry.getValue());
 					}
@@ -93,8 +93,8 @@ public class LaptopList extends HttpServlet {
 		pw.print("</h2><div class='entry'><table id='bestseller'>");
 		int i = 1;
 		int size = hm.size();
-		for (Map.Entry<String, Laptop> entry : hm.entrySet()) {
-			Laptop Laptop = entry.getValue();
+		for (Map.Entry<String, Product> entry : hm.entrySet()) {
+			Product Laptop = entry.getValue();
 			if (i % 3 == 1)
 				pw.print("<tr>");
 			pw.print("<td><div id='shop_item'>");

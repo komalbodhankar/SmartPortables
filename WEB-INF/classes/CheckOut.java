@@ -63,7 +63,8 @@ public class CheckOut extends HttpServlet {
 			pw.print("<input type='hidden' name='rebate' value='"+oi.getRebate()+"'>");
 			pw.print("<tr><td> Product Discount:</td><td>" + oi.getDiscount() + "</td></tr>");
 			pw.print("<tr><td> Product Rebate:</td><td>" + oi.getRebate() + "</td></tr>");
-			pw.print("<tr><td> Product Price:</td><td>" + oi.getPrice() + "</td></tr>");
+			pw.print("Product & Warranty Price:</td><td class='rightDataTable'>$"+ oi.getPrice() + " | $" + (oi.getbuyWarranty()? 25 : 0));
+			pw.print("</td></tr>");
 		}
 		pw.print("<tr><td>");
         pw.print("Total Order Cost</td><td>"+orderTotal);

@@ -24,14 +24,16 @@ public class OrderItem extends HttpServlet{
 	private String retailer;
 	private double discount;
 	private double rebate;
+	private boolean buyWarranty;
 	
-	public OrderItem(String name, double price, String image, String retailer, double discount, double rebate){
+	public OrderItem(String name, double price, String image, String retailer, double discount, double rebate, boolean buyWarranty){
 		this.name=name;
 		this.price=price;
 		this.image=image;
 		this.retailer = retailer;
 		this.discount = discount;
 		this.rebate = rebate;
+		this.buyWarranty = buyWarranty;
 	}
 	public String getName() {
 		return name;
@@ -79,5 +81,13 @@ public class OrderItem extends HttpServlet{
 
 	public void setRebate(double rebate) {
 		this.rebate = rebate;
+	}
+
+	public boolean getbuyWarranty() {
+		return buyWarranty;
+	}
+
+	public void setbuyWarranty(boolean buyWarranty) {
+		this.buyWarranty = buyWarranty;
 	}
 }

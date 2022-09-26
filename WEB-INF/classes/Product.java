@@ -3,7 +3,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 
-@WebServlet("/Wearable")
+@WebServlet("/Product")
 
 
 /* 
@@ -15,21 +15,27 @@ import javax.servlet.http.HttpServlet;
 
 */
 
-public class Wearable extends HttpServlet{
+public class Product extends HttpServlet{
 	private String id;
 	private String name;
 	private double price;
 	private String image;
 	private String retailer;
+
+	private String categoryName;
 	private String condition;
 	private double discount;
 
 	private double rebate;
 
 	private String description;
+	private boolean buyWarranty;
+
+	private double WarrantyPrice;
+
 	HashMap<String,String> accessories;
-	public Wearable(String name, double price, String image, String retailer,
-					String condition,double discount, double rebate, String description){
+	public Product(String name, double price, String image, String retailer,
+				   String condition, double discount, double rebate, String description, boolean buyWarranty, double WarrantyPrice){
 		this.name=name;
 		this.price=price;
 		this.image=image;
@@ -39,13 +45,15 @@ public class Wearable extends HttpServlet{
 		this.rebate = rebate;
 		this.description = description;
         this.accessories=new HashMap<>();
+		this.buyWarranty = buyWarranty;
+		this.WarrantyPrice = WarrantyPrice;
 	}
 	
     HashMap<String,String> getAccessories() {
 		return accessories;
 		}
 
-	public Wearable(){
+	public Product(){
 		
 	}
 	public String getId() {
@@ -79,7 +87,15 @@ public class Wearable extends HttpServlet{
 		this.retailer = retailer;
 	}
 
-	public void setAccessories( HashMap<String,String> accessories) {
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public void setAccessories(HashMap<String,String> accessories) {
 		this.accessories = accessories;
 	}
 	
@@ -114,5 +130,40 @@ public class Wearable extends HttpServlet{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				", price=" + price +
+				", image='" + image + '\'' +
+				", retailer='" + retailer + '\'' +
+				", categoryName='" + categoryName + '\'' +
+				", condition='" + condition + '\'' +
+				", discount=" + discount +
+				", rebate=" + rebate +
+				", description='" + description + '\'' +
+				", accessories=" + accessories + '\'' +
+				", warrantyprice=" + WarrantyPrice +
+				'}';
+	}
+
+	public boolean getbuyWarranty() {
+		return buyWarranty;
+	}
+
+	public void setbuyWarranty(boolean buyWarranty) {
+		this.buyWarranty = buyWarranty;
+	}
+
+	public Double getWarrantyPrice() {
+		return WarrantyPrice;
+	}
+
+	public void setWarrantyPrice(Double WarrantyPrice) {
+		this.WarrantyPrice = WarrantyPrice;
+	}
+
+
 }

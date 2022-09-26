@@ -27,13 +27,13 @@ public class NextAccessory extends HttpServlet {
 
 		/* Checks the Tablets type whether it is microsft or sony or nintendo */
 
-		HashMap<String, Wearable> hm = new HashMap<String, Wearable>();
+		HashMap<String, Product> hm = new HashMap<String, Product>();
 		if(CategoryName==null){
 			hm.putAll(SaxParserDataStore.wearables);
 			name = "";
 		}
 		else if(CategoryName.equals("fitness_watches")) {
-			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+			for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet()) {
 				if(entry.getValue().getRetailer().equals("Fitness Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
@@ -41,28 +41,28 @@ public class NextAccessory extends HttpServlet {
 			name = "Fitness Watches";
 		   }
 		   else if(CategoryName.equals("smart_watches")) {
-			for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+			for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet()) {
 				 if(entry.getValue().getRetailer().equals("Smart Watches")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 				 name = "Smart Watches";
 			} else if(CategoryName.equals("Headphones")) {
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet()) {
 				 if(entry.getValue().getRetailer().equals("Headphones")) {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			   	 name = "Headphones";
 			} else if(CategoryName.equals("vr")) {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+			   for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet()) {
 				   if(entry.getValue().getRetailer().equals("Virtual Reality")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
 			   }
 			   name = "Virtual Reality";
 		   } else if(CategoryName.equals("pt")) {
-			   for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet()) {
+			   for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet()) {
 				   if(entry.getValue().getRetailer().equals("Pet Tracker")) {
 					   hm.put(entry.getValue().getId(),entry.getValue());
 				   }
@@ -84,16 +84,16 @@ public class NextAccessory extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>"+name+" Wearables</a>");
 		pw.print("</h2><div class='entry'><table id='bestseller'>");
 	//	int i = 1; int size= hm.size();
-		for(Map.Entry<String, Wearable> entry : hm.entrySet())
+		for(Map.Entry<String, Product> entry : hm.entrySet())
 		{
-			Wearable wearable = entry.getValue();
-			if (wearable.getName().equals(ProductName))
+			Product product = entry.getValue();
+			if (product.getName().equals(ProductName))
 			{
 			pw.print("<tr>");
 			pw.print("<td><div id='shop_item'>");
-			pw.print("<h3>"+wearable.getName()+"</h3>");
-			pw.print("<strong>$"+wearable.getPrice()+"</strong><ul>");
-			pw.print("<li id='item'><img src='images/wearables/"+wearable.getImage()+"' alt='' /></li>");
+			pw.print("<h3>"+ product.getName()+"</h3>");
+			pw.print("<strong>$"+ product.getPrice()+"</strong><ul>");
+			pw.print("<li id='item'><img src='images/wearables/"+ product.getImage()+"' alt='' /></li>");
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='wearables'>"+
@@ -120,12 +120,12 @@ public class NextAccessory extends HttpServlet {
 		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 		pw.print("<a style='font-size: 24px;'>"+ProductName+" Accessories</a>");
 		pw.print("</h2><div class='entry'><table id='bestseller'>");
-		Wearable wearable1 = hm.get(ProductName);
+		Product product1 = hm.get(ProductName);
 		System.out.print(ProductName);
 		int i = 1; int size= hm.size();
 		pw.print("<tr>");
 		ArrayList<String> arr = new ArrayList<String> ();
-		for(Map.Entry<String, String> acc:wearable1.getAccessories().entrySet())
+		for(Map.Entry<String, String> acc: product1.getAccessories().entrySet())
 		{
 			
 			arr.add(acc.getValue());

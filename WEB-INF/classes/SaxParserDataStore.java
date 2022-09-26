@@ -20,6 +20,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -36,13 +37,13 @@ import org.xml.sax.helpers.DefaultHandler;
 ////////////////////////////////////////////////////////////
 
 public class SaxParserDataStore extends DefaultHandler {
-    Wearable wearable;
-    Phone phone;
-    Laptop laptop;
+    Product wearable;
+    Product phone;
+    Product laptop;
     Accessory accessory;
-    static HashMap<String, Wearable> wearables;
-    static HashMap<String, Phone> phones;
-    static HashMap<String, Laptop> laptops;
+    static HashMap<String, Product> wearables;
+    static HashMap<String, Product> phones;
+    static HashMap<String, Product> laptops;
     static HashMap<String, Accessory> accessories;
     String consoleXmlFileName;
     HashMap<String, String> accessoryHashMap;
@@ -54,10 +55,10 @@ public class SaxParserDataStore extends DefaultHandler {
 
     public SaxParserDataStore(String consoleXmlFileName) {
         this.consoleXmlFileName = consoleXmlFileName;
-        wearables = new HashMap<String, Wearable>();
-        phones = new HashMap<String, Phone>();
-        laptops = new HashMap<String, Laptop>();
-        accessories = new HashMap<String, Accessory>();
+        wearables = new HashMap<>();
+        phones = new HashMap<>();
+        laptops = new HashMap<>();
+        accessories = new HashMap<>();
         accessoryHashMap = new HashMap<String, String>();
         parseDocument();
     }
@@ -105,17 +106,17 @@ public class SaxParserDataStore extends DefaultHandler {
             System.out.println("elementName " + elementName);
             if (elementName.equalsIgnoreCase("wearable")) {
                 currentElement = "wearable";
-                wearable = new Wearable();
+                wearable = new Product();
                 wearable.setId(attributes.getValue("id"));
             }
             if (elementName.equalsIgnoreCase("laptop")) {
                 currentElement = "laptop";
-                laptop = new Laptop();
+                laptop = new Product();
                 laptop.setId(attributes.getValue("id"));
             }
             if (elementName.equalsIgnoreCase("phone")) {
                 currentElement = "phone";
-                phone = new Phone();
+                phone = new Product();
                 phone.setId(attributes.getValue("id"));
             }
             if (elementName.equals("accessory") && !currentElement.equals("wearable")) {
@@ -244,6 +245,18 @@ public class SaxParserDataStore extends DefaultHandler {
                 return;
             }
 
+            if (element.equalsIgnoreCase("category")) {
+                if (currentElement.equals("wearable"))
+                    wearable.setCategoryName(elementValueRead);
+                if (currentElement.equals("phone"))
+                    phone.setCategoryName(elementValueRead);
+                if (currentElement.equals("laptop"))
+                    laptop.setCategoryName(elementValueRead);
+                if (currentElement.equals("accessory"))
+                    accessory.setRetailer(elementValueRead);
+                return;
+            }
+
             if (element.equalsIgnoreCase("name")) {
                 if (currentElement.equals("wearable"))
                     wearable.setName(elementValueRead);
@@ -263,6 +276,17 @@ public class SaxParserDataStore extends DefaultHandler {
                     phone.setPrice(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("laptop"))
                     laptop.setPrice(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("accessory"))
+                    accessory.setPrice(Double.parseDouble(elementValueRead));
+            }
+
+            if (element.equalsIgnoreCase("warranty")){
+                if (currentElement.equals("wearable"))
+                    wearable.setWarrantyPrice(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("phone"))
+                    phone.setWarrantyPrice(Double.parseDouble(elementValueRead));
+                if (currentElement.equals("laptop"))
+                    laptop.setWarrantyPrice(Double.parseDouble(elementValueRead));
                 if (currentElement.equals("accessory"))
                     accessory.setPrice(Double.parseDouble(elementValueRead));
             }

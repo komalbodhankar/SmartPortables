@@ -23,7 +23,7 @@ public class Trending extends HttpServlet {
 
 		String name = "Trending";
 		String CategoryName = request.getParameter("maker");
-		HashMap<String, Wearable> hm = new HashMap<String, Wearable>();
+		HashMap<String, Product> hm = new HashMap<String, Product>();
 		if(CategoryName==null)
 		{
 			hm.putAll(SaxParserDataStore.wearables);
@@ -32,7 +32,7 @@ public class Trending extends HttpServlet {
 		{
 			if(CategoryName.equals("fitness_watches"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet())
 				{
 				  if(entry.getValue().getRetailer().equals("Fitness Watches"))
 				  {
@@ -42,7 +42,7 @@ public class Trending extends HttpServlet {
 			}
 			else if(CategoryName.equals("smart_watches"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet())
 				{
 				  if(entry.getValue().getRetailer().equals("Smart Watches"))
 				  {
@@ -52,7 +52,7 @@ public class Trending extends HttpServlet {
 			}
 			else if(CategoryName.equals("headphones"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet())
 				{ 
 			      if(entry.getValue().getRetailer().equals("Headphones"))
 				  {
@@ -62,7 +62,7 @@ public class Trending extends HttpServlet {
 			}
 			else if(CategoryName.equals("vr"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet())
 				{
 					if(entry.getValue().getRetailer().equals("Virtual Reality"))
 					{
@@ -72,7 +72,7 @@ public class Trending extends HttpServlet {
 			}
 			else if(CategoryName.equals("pt"))
 			{
-				for(Map.Entry<String,Wearable> entry : SaxParserDataStore.wearables.entrySet())
+				for(Map.Entry<String, Product> entry : SaxParserDataStore.wearables.entrySet())
 				{
 					if(entry.getValue().getRetailer().equals("Pet Tracker"))
 					{
@@ -96,27 +96,27 @@ public class Trending extends HttpServlet {
 		pw.print("<a style='font-size: 24px;'>"+name+" Products</a>");
 		pw.print("</h2><div class='entry'><table id='bestseller'>");
 		int i = 1; int size= hm.size();
-		for(Map.Entry<String, Wearable> entry : hm.entrySet()){
-			Wearable wearable = entry.getValue();
+		for(Map.Entry<String, Product> entry : hm.entrySet()){
+			Product product = entry.getValue();
 			if(i%3==1) pw.print("<tr>");
 			pw.print("<td><div id='shop_item'>");
-			pw.print("<h3>"+wearable.getName()+"</h3>");
-			pw.print("<strong>$"+wearable.getPrice()+"</strong><ul>");
-			pw.print("<li id='item'><img src='images/wearables/"+wearable.getImage()+"' alt='' /></li>");
+			pw.print("<h3>"+ product.getName()+"</h3>");
+			pw.print("<strong>$"+ product.getPrice()+"</strong><ul>");
+			pw.print("<li id='item'><img src='images/wearables/"+ product.getImage()+"' alt='' /></li>");
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='wearables'>"+
-					"<input type='hidden' name='maker' value='"+wearable.getRetailer()+"'>"+
+					"<input type='hidden' name='maker' value='"+ product.getRetailer()+"'>"+
 					"<input type='hidden' name='access' value=''>"+
 					"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
 			pw.print("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='wearables'>"+
-					"<input type='hidden' name='maker' value='"+wearable.getRetailer()+"'>"+
+					"<input type='hidden' name='maker' value='"+ product.getRetailer()+"'>"+
 					"<input type='hidden' name='access' value=''>"+
 				    "<input type='submit' value='WriteReview' class='btnreview'></form></li>");
 			pw.print("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='wearables'>"+
-					"<input type='hidden' name='maker' value='"+wearable.getRetailer()+"'>"+
+					"<input type='hidden' name='maker' value='"+ product.getRetailer()+"'>"+
 					"<input type='hidden' name='access' value=''>"+
 				    "<input type='submit' value='ViewReview' class='btnreview'></form></li>");
 			pw.print("</ul></div></td>");

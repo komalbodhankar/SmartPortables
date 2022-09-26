@@ -3,17 +3,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ArrayList;
-import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 
@@ -206,31 +201,31 @@ public class Utilities extends HttpServlet {
 
     public void storeProduct(String name, String type, String maker, String acc) {
         if (!OrdersHashMap.orders.containsKey(username())) {
-            ArrayList<OrderItem> arr = new ArrayList<OrderItem>();
+            ArrayList<OrderItem> arr = new ArrayList<>();
             OrdersHashMap.orders.put(username(), arr);
         }
         ArrayList<OrderItem> orderItems = OrdersHashMap.orders.get(username());
         if (type.equals("wearables")) {
-            Wearable wearable;
-            wearable = SaxParserDataStore.wearables.get(name);
-            OrderItem orderitem = new OrderItem(wearable.getName(), wearable.getPrice(), wearable.getImage(), wearable.getRetailer(), wearable.getDiscount(), wearable.getRebate());
+            Product product;
+            product = SaxParserDataStore.wearables.get(name);
+            OrderItem orderitem = new OrderItem(product.getName(), product.getPrice(), product.getImage(), product.getRetailer(), product.getDiscount(), product.getRebate(), product.getbuyWarranty());
             orderItems.add(orderitem);
         }
         if (type.equals("phones")) {
-            Phone phone = null;
-            phone = SaxParserDataStore.phones.get(name);
-            OrderItem orderitem = new OrderItem(phone.getName(), phone.getPrice(), phone.getImage(), phone.getRetailer(), phone.getDiscount(), phone.getRebate());
+            Product product;
+            product = SaxParserDataStore.phones.get(name);
+            OrderItem orderitem = new OrderItem(product.getName(), product.getPrice(), product.getImage(), product.getRetailer(), product.getDiscount(), product.getRebate(), product.getbuyWarranty());
             orderItems.add(orderitem);
         }
         if (type.equals("laptops")) {
-            Laptop laptop = null;
-            laptop = SaxParserDataStore.laptops.get(name);
-            OrderItem orderitem = new OrderItem(laptop.getName(), laptop.getPrice(), laptop.getImage(), laptop.getRetailer(), laptop.getDiscount(), laptop.getRebate());
+            Product product;
+            product = SaxParserDataStore.laptops.get(name);
+            OrderItem orderitem = new OrderItem(product.getName(), product.getPrice(), product.getImage(), product.getRetailer(), product.getDiscount(), product.getRebate(), product.getbuyWarranty());
             orderItems.add(orderitem);
         }
         if (type.equals("accessories")) {
             Accessory accessory = SaxParserDataStore.accessories.get(name);
-            OrderItem orderitem = new OrderItem(accessory.getName(), accessory.getPrice(), accessory.getImage(), accessory.getRetailer(), accessory.getDiscount(), accessory.getRebate());
+            OrderItem orderitem = new OrderItem(accessory.getName(), accessory.getPrice(), accessory.getImage(), accessory.getRetailer(), accessory.getDiscount(), accessory.getRebate(), accessory.getbuyWarranty());
             orderItems.add(orderitem);
         }
 
@@ -238,7 +233,7 @@ public class Utilities extends HttpServlet {
 
     // store the payment details for orders
     public void storePayment(int orderId,
-                             String orderName, double orderPrice, double discount, double rebate, String userAddress, String creditCardNo) {
+                             String orderName, double orderPrice, double discount, double rebate, double buyWarranty, String userAddress, String creditCardNo) {
         HashMap<Integer, ArrayList<OrderPayment>> orderPayments = new HashMap<>();
         String TOMCAT_HOME = System.getProperty("catalina.home");
         // get the payment details file
@@ -278,24 +273,24 @@ public class Utilities extends HttpServlet {
 
     /* getConsoles Functions returns the Hashmap with all consoles in the store.*/
 
-    public HashMap<String, Wearable> getConsoles() {
-        HashMap<String, Wearable> hm = new HashMap<String, Wearable>();
+    public HashMap<String, Product> getConsoles() {
+        HashMap<String, Product> hm = new HashMap<String, Product>();
         hm.putAll(SaxParserDataStore.wearables);
         return hm;
     }
 
     /* getGames Functions returns the  Hashmap with all Games in the store.*/
 
-    public HashMap<String, Phone> getGames() {
-        HashMap<String, Phone> hm = new HashMap<String, Phone>();
+    public Map<String, Product> getGames() {
+        Map<String, Product> hm = new HashMap<>();
         hm.putAll(SaxParserDataStore.phones);
         return hm;
     }
 
     /* getTablets Functions returns the Hashmap with all Tablet in the store.*/
 
-    public HashMap<String, Laptop> getTablets() {
-        HashMap<String, Laptop> hm = new HashMap<String, Laptop>();
+    public HashMap<String, Product> getTablets() {
+        HashMap<String, Product> hm = new HashMap<>();
         hm.putAll(SaxParserDataStore.laptops);
         return hm;
     }
@@ -304,7 +299,7 @@ public class Utilities extends HttpServlet {
 
     public ArrayList<String> getProducts() {
         ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Wearable> entry : getConsoles().entrySet()) {
+        for (Map.Entry<String, Product> entry : getConsoles().entrySet()) {
             ar.add(entry.getValue().getName());
         }
         return ar;
@@ -314,7 +309,7 @@ public class Utilities extends HttpServlet {
 
     public ArrayList<String> getProductsGame() {
         ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Phone> entry : getGames().entrySet()) {
+        for (Map.Entry<String, Product> entry : getGames().entrySet()) {
             ar.add(entry.getValue().getName());
         }
         return ar;
@@ -324,7 +319,7 @@ public class Utilities extends HttpServlet {
 
     public ArrayList<String> getProductsTablets() {
         ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Laptop> entry : getTablets().entrySet()) {
+        for (Map.Entry<String, Product> entry : getTablets().entrySet()) {
             ar.add(entry.getValue().getName());
         }
         return ar;
