@@ -561,6 +561,20 @@ table.gridtable td {
 	display: flex;
 }
 
+.classicButton {
+	border-radius: 5px;
+	border-color: var(--background-color);
+	color: white;
+	background-color: var(--background-color);
+	height: 25px;
+	margin: 2px auto;
+    padding: 10px 10px;
+}
+
+.classicButton:hover {
+	color: var(--pink);
+}
+
 .description {
 	text-align: center;
 	color: var(--pink);

@@ -119,7 +119,7 @@ public class Registration extends HttpServlet {
 				+ "</td></tr><tr><td>"
 				+ "<h3>Re-Password</h3></td><td><input type='password' name='repassword' value='' class='input' required></input>"
 				+ "</td></tr><tr><td>"
-				+ "<h3>User Type</h3></td><td><select name='usertype' class='input'><option value='customer' selected>Customer</option><option value='retailer'>Store Manager</option><option value='manager'>Salesman</option></select>"
+				+ "<h3>User Type</h3></td><td><select name='usertype' class='input'><option value='Customer' selected>Customer</option><option value='StoreManager'>Store Manager</option><option value='SalesMan'>Salesman</option></select>"
 				+ "</td></tr></table>"
 				+ "<input type='submit' class='btnbuy' name='ByUser' value='Create User' style='float: right;height: 20px margin: 20px; margin-right: 10px;'></input>"
 				+ "</form>" + "</div></div></div>");

@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
 		}
 		catch(Exception e)
 		{
-				
+			e.printStackTrace();
 		}
 		User user = hm.get(username);
 		if(user!=null)
@@ -47,6 +47,8 @@ public class Login extends HttpServlet {
 			{
 			HttpSession session = request.getSession(true);
 			session.setAttribute("username", user.getName());
+			System.out.println("***************************** printing user type ************");
+			System.out.println(user.toString());
 			session.setAttribute("usertype", user.getUsertype());
 			response.sendRedirect("Home");
 			return;
@@ -88,7 +90,7 @@ public class Login extends HttpServlet {
 				+ "</td></tr><tr><td>"
 				+ "<h3>Password</h3></td><td><input type='password' name='password' value='' class='input' required></input>"
 				+ "</td></tr><tr><td>"
-				+ "<h3>User Type</h3></td><td><select name='usertype' class='input'><option value='customer' selected>Customer</option><option value='retailer'>Store Manager</option><option value='manager'>Salesman</option></select>"
+				+ "<h3>User Type</h3></td><td><select name='usertype' class='input'><option value='Customer' selected>Customer</option><option value='StoreManager'>Store Manager</option><option value='SalesMan'>Salesman</option></select>"
 				+ "</td></tr><tr><td></td><td>"
 				+ "<input type='submit' class='btnbuy' value='Login' style='float: right;height: 20px margin: 20px; margin-right: 10px;'></input>"
 				+ "</td></tr><tr><td></td><td>"

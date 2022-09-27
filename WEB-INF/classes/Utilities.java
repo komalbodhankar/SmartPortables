@@ -150,6 +150,7 @@ public class Utilities extends HttpServlet {
             FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME + "/webapps/SmartPortables/UserDetails.txt"));
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             userNameUserObjectMap = (HashMap) objectInputStream.readObject();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -168,6 +169,13 @@ public class Utilities extends HttpServlet {
         ArrayList<OrderItem> order = new ArrayList<OrderItem>();
         if (OrdersHashMap.orders.containsKey(username()))
             order = OrdersHashMap.orders.get(username());
+        return order;
+    }
+
+    public ArrayList<OrderItem> getCustomerOrders(String username) {
+        ArrayList<OrderItem> order = new ArrayList<OrderItem>();
+        if (OrdersHashMap.orders.containsKey(username))
+            order = OrdersHashMap.orders.get(username);
         return order;
     }
 
@@ -233,7 +241,9 @@ public class Utilities extends HttpServlet {
 
     // store the payment details for orders
     public void storePayment(int orderId,
-                             String orderName, double orderPrice, double discount, double rebate, double buyWarranty, String userAddress, String creditCardNo) {
+                             String orderName, double orderPrice, double discount,
+                             double rebate, double buyWarranty, String creditCardNo, String firstName, String lastName,
+                             String address1, String address2, String city, String state, String zipcode, String phone) {
         HashMap<Integer, ArrayList<OrderPayment>> orderPayments = new HashMap<>();
         String TOMCAT_HOME = System.getProperty("catalina.home");
         // get the payment details file
@@ -250,14 +260,16 @@ public class Utilities extends HttpServlet {
         // if there exist order id already add it into same list for order id or create a new record with order id
 
         if (!orderPayments.containsKey(orderId)) {
-            ArrayList<OrderPayment> arr = new ArrayList<OrderPayment>();
+            ArrayList<OrderPayment> arr = new ArrayList<>();
             orderPayments.put(orderId, arr);
         }
         ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);
-        OrderPayment orderpayment = new OrderPayment(orderId, username(), orderName, orderPrice, discount, rebate, userAddress, creditCardNo);
+        OrderPayment orderpayment = new OrderPayment(orderId, username(), orderName, orderPrice, discount,
+                rebate, creditCardNo, firstName, lastName, address1, address2, city, state, zipcode, phone);
         listOrderPayment.add(orderpayment);
 
-        // add order details into file
+
+        // add order details into file,
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME + "/webapps/SmartPortables/PaymentDetails.txt"));
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -269,61 +281,4 @@ public class Utilities extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-
-    /* getConsoles Functions returns the Hashmap with all consoles in the store.*/
-
-    public HashMap<String, Product> getConsoles() {
-        HashMap<String, Product> hm = new HashMap<String, Product>();
-        hm.putAll(SaxParserDataStore.wearables);
-        return hm;
-    }
-
-    /* getGames Functions returns the  Hashmap with all Games in the store.*/
-
-    public Map<String, Product> getGames() {
-        Map<String, Product> hm = new HashMap<>();
-        hm.putAll(SaxParserDataStore.phones);
-        return hm;
-    }
-
-    /* getTablets Functions returns the Hashmap with all Tablet in the store.*/
-
-    public HashMap<String, Product> getTablets() {
-        HashMap<String, Product> hm = new HashMap<>();
-        hm.putAll(SaxParserDataStore.laptops);
-        return hm;
-    }
-
-    /* getProducts Functions returns the Arraylist of consoles in the store.*/
-
-    public ArrayList<String> getProducts() {
-        ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Product> entry : getConsoles().entrySet()) {
-            ar.add(entry.getValue().getName());
-        }
-        return ar;
-    }
-
-    /* getProducts Functions returns the Arraylist of games in the store.*/
-
-    public ArrayList<String> getProductsGame() {
-        ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Product> entry : getGames().entrySet()) {
-            ar.add(entry.getValue().getName());
-        }
-        return ar;
-    }
-
-    /* getProducts Functions returns the Arraylist of Tablets in the store.*/
-
-    public ArrayList<String> getProductsTablets() {
-        ArrayList<String> ar = new ArrayList<String>();
-        for (Map.Entry<String, Product> entry : getTablets().entrySet()) {
-            ar.add(entry.getValue().getName());
-        }
-        return ar;
-    }
-
-
 }

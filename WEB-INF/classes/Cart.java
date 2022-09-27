@@ -25,6 +25,8 @@ public class Cart extends HttpServlet {
 			String type = request.getParameter("type");
 			String maker = request.getParameter("maker");
 			String access = request.getParameter("access");
+//			String warranty = request.getParameter("warranty");
+//			boolean buyWarranty = "warranty".equalsIgnoreCase(warranty) ? true : false;
 			System.out.print("name" + name + "type" + type + "maker" + maker + "accesee" + access);
 
 			/* StoreProduct Function stores the Purchased product in Orders HashMap.*/
@@ -67,6 +69,7 @@ public class Cart extends HttpServlet {
 				pw.print("<th>Order Price</th>");
 				pw.print("<th>Discount</th>");
 				pw.print("<th>Rebate</th>");
+				pw.print("<th>WarrantyPrice</th>");
 				pw.print("<th>Remove Item</th>");
 				pw.print("</tr>");
 				int i = 1;

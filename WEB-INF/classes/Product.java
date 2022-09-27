@@ -145,7 +145,7 @@ public class Product extends HttpServlet{
 				", rebate=" + rebate +
 				", description='" + description + '\'' +
 				", accessories=" + accessories + '\'' +
-				", warrantyprice=" + WarrantyPrice +
+				", warrantyPrice=" + 25.0 +
 				'}';
 	}
 

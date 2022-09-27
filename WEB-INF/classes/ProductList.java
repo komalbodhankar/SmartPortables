@@ -83,18 +83,18 @@ public class ProductList extends HttpServlet {
 			pw.print("<li class='description'><span>" + product.getDescription() + "</span></li>");
 			pw.print("<li class='description'><span> Discount:" + product.getDiscount() + "</span></li>");
 			pw.print("<li class='description'><span> Rebate:" + product.getRebate() + "</span></li>");
-			pw.print("<li class='description'><span> Warranty:" + product.getWarrantyPrice() + "</span></li>");
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='"+prodType+"'>"+
 					"<input type='hidden' name='maker' value='"+categoryName+"'>"+
 					"<input type='hidden' name='access' value=''>"+
+					"<input type='checkbox' id='warranty' name='warranty' value='warranty'>" +
+					"<label for='vehicle1'>1 Year Warranty 25$</label>" +
 					"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
-			pw.print("<li><form method='post' action='ViewProduct'>" +
+			pw.print("<li><form method='get' action='ViewProduct'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
 					"<input type='hidden' name='type' value='"+prodType+"'>"+
-					"<input type='hidden' name='maker' value='"+categoryName+"'>"+
-					"<input type='hidden' name='access' value=''>"+
+					"<input type='hidden' name='maker' value='"+categoryName+"'>" +
 					"<input type='submit' class='btnbuy' value='View Product'></form></li>");
 
 

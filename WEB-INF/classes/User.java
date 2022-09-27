@@ -56,4 +56,14 @@ public class User implements Serializable{
 	public void setUsertype(String usertype) {
 		this.usertype = usertype;
 	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", password='" + password + '\'' +
+				", usertype='" + usertype + '\'' +
+				'}';
+	}
 }
